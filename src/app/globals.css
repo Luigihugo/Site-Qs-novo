@@ -153,6 +153,12 @@ html {
   color: var(--color-brand-navy-900);
 }
 
+/* Prevent unwanted word breaks in hero titles */
+h1 span {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
 .btn-premium {
   position: relative;
   display: inline-flex;

@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center">
       <div className="absolute inset-0 bg-gradient-to-b from-brand-navy-800/60 via-brand-navy-800/30 to-transparent" />
-      <div className="mx-auto max-w-7xl px-6 py-32 w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-32 w-full">
         <div className="space-y-6 md:space-y-8 max-w-5xl">
           {/* Título pequeno - hierarquia superior */}
           <div 
@@ -28,14 +28,18 @@ export default function HeroSection() {
 
           {/* Título principal - grande e impactante */}
           <h1 
-            className={`text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-[-0.02em] [font-family:var(--font-display)] transition-all duration-1000 ease-out ${
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[1.2] tracking-tight [font-family:var(--font-display)] transition-all duration-1000 ease-out ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '0.2s' }}
           >
             <span className="block">Transformamos</span>
-            <span className="block text-brand-gold-500">complexidade do seu</span>
-            <span className="block">negócio em vantagem</span>
+            <span className="block text-brand-gold-500">
+              complexidade do seu
+            </span>
+            <span className="block">
+              negócio em vantagem
+            </span>
             <span className="block text-brand-gold-500">competitiva</span>
           </h1>
 

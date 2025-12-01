@@ -18,14 +18,14 @@ export default function InteractiveBackground({ children }: { children: React.Re
       style={{
         backgroundImage: `
           radial-gradient(
-            600px circle at ${cursor.x}px ${cursor.y}px, 
-            rgba(204,153,3,0.16), 
-            transparent 65%
+            900px circle at ${cursor.x}px ${cursor.y}px,
+            rgba(204,153,3,0.20),
+            transparent 60%
           ),
           radial-gradient(
-            900px circle at ${cursor.x}px ${cursor.y}px,
-            rgba(204,153,3,0.07), 
-            transparent 75%
+            1600px circle at ${cursor.x}px ${cursor.y}px,
+            rgba(204,153,3,0.07),
+            transparent 80%
           )
         `,
         backgroundAttachment: "fixed",

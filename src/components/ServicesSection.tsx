@@ -106,7 +106,7 @@ export default function ServicesSection() {
         {servicos.map((s, index) => (
           <RevealOnScroll key={s.titulo} delay={index * 50} direction="scale">
             <div
-              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
+              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-3 flex flex-col h-full transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
             >
               <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
                 {s.titulo}
@@ -126,7 +126,7 @@ export default function ServicesSection() {
                   expanded === slugify(s.titulo) ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-white/90 leading-relaxed">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-white/90 leading-relaxed">
                   {s.detalhes}
                 </div>
               </div>

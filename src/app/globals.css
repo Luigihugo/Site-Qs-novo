@@ -251,3 +251,14 @@ h1 span {
 .btn-outline-premium:active {
   transform: translateY(-1px) scale(1);
 }
+
+/* Compacta seções principais globalmente onde usar estas classes */
+.py-32 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+.py-24 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.md\:py-32 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+.md\:py-24 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+.px-6 { padding-left: 1rem !important; padding-right: 1rem !important; }
+.px-8 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+.md\:px-8 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+.lg\:px-12 { padding-left: 2rem !important; padding-right: 2rem !important; }
+.lg\:px-16 { padding-left: 2.5rem !important; padding-right: 2.5rem !important; }

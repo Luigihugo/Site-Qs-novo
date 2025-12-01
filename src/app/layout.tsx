@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import CursorFollower from "@/components/CursorFollower";
+import BackToTop from "@/components/BackToTop";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,12 +10,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
+
 
 export const metadata: Metadata = {
   title: "QS Consultoria — Consultoria estratégica personalizada",
@@ -28,8 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className="scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans`}>
+      <body className={`${inter.variable} antialiased font-sans`}>
+        <CursorFollower />
         {children}
+        <BackToTop />
       </body>
     </html>
   );

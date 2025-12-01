@@ -1,67 +1,48 @@
-"use client";
-import { useEffect, useState } from "react";
 import RollingTags from "@/components/RollingTags";
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex flex-col">
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-navy-800/60 via-brand-navy-800/30 to-transparent" />
-      
-      {/* Conteúdo principal - usando toda a largura */}
-      <div className="relative z-10 flex-1 flex items-center w-full">
-        <div className="mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-32">
-          <div className="space-y-5 md:space-y-8 lg:space-y-10 w-full">
-            {/* Label superior pequena */}
-            <div
-              className={`transition-all duration-1000 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: '0.1s' }}
-            >
-              <span className="text-sm md:text-base uppercase tracking-[0.22em] text-brand-gold-500 font-semibold">
-                Consultoria estratégica personalizada
-              </span>
-            </div>
+    <section className="relative overflow-hidden min-h-screen flex flex-col">
+      {/* Conteúdo principal - Flex-1 para ocupar o espaço disponível */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-20 md:py-32">
+        <div className="mx-auto max-w-7xl space-y-6 md:space-y-8 flex flex-col items-center text-center">
 
-            {/* Título grande chamativo */}
-            <h1
-              className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold leading-tight tracking-tight [font-family:var(--font-display)] text-white transition-all duration-1000 ease-out w-full ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: '0.2s' }}
-            >
-              Obtenha visão estratégica<br className="hidden md:inline" /> e alcance todo o potencial da sua empresa
-            </h1>
-
-            {/* Subtítulo */}
-            <h2
-              className={`text-lg md:text-2xl lg:text-3xl font-semibold leading-relaxed text-brand-gold-500 lg:pb-2 transition-all duration-1000 ease-out w-full ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: '0.3s' }}
-            >
-              Transforme desafios em oportunidades
-            </h2>
-            {/* CTAs mantidas na sequência */}
-            <div 
-              className={`flex flex-wrap gap-5 pt-6 md:pt-8 transition-all duration-1000 ease-out ${
-                mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ transitionDelay: '0.6s' }}
-            >
-              <a href="#servicos" className="btn-outline-premium text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
-                Conheça nossos serviços
-              </a>
-              <a href="#contato" className="btn-premium text-base md:text-lg px-6 md:px-8 py-3 md:py-4">
-                Agendar conversa estratégica
-              </a>
-            </div>
+          {/* Label */}
+          <div className="animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s' }}>
+            <span className="inline-block py-1 px-3 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/20 text-xs md:text-sm uppercase tracking-[0.2em] text-brand-gold-500 font-semibold backdrop-blur-sm">
+              Consultoria Estratégica
+            </span>
           </div>
+
+          {/* Título */}
+          <h1 className="animate-fade-in-up opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
+            Obtenha visão estratégica <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
+              e alcance o potencial máximo
+            </span>
+          </h1>
+
+          {/* Subtítulo */}
+          <p className="animate-fade-in-up opacity-0 text-lg md:text-xl lg:text-2xl text-brand-blue-100/80 max-w-2xl leading-relaxed" style={{ animationDelay: '0.3s' }}>
+            Transformamos desafios complexos em oportunidades de crescimento com inteligência tributária e jurídica.
+          </p>
+
+          {/* CTAs */}
+          <div className="animate-fade-in-up opacity-0 flex flex-wrap justify-center gap-4 pt-4" style={{ animationDelay: '0.4s' }}>
+            <a href="#contato" className="group relative btn-premium text-base md:text-lg px-8 py-4 overflow-hidden">
+              <span className="relative z-10">Agendar Conversa</span>
+              <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent z-0" />
+            </a>
+            <a href="#servicos" className="btn-outline-premium text-base md:text-lg px-8 py-4 hover:bg-white/5">
+              Nossos Serviços
+            </a>
+          </div>
+
         </div>
       </div>
 
-      {/* Tags na parte inferior, separadas do conteúdo */}
-      <div className="relative z-10 pb-8 md:pb-12">
+      {/* Tags na parte inferior - Relativo ao fluxo, sem sobreposição */}
+      <div className="relative z-10 pb-8 animate-fade-in opacity-0" style={{ animationDelay: '0.8s' }}>
         <RollingTags />
       </div>
     </section>

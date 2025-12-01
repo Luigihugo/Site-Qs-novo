@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import ServiceModal from "@/components/ServiceModal";
 type Servico = { titulo: string; descricao: string; detalhes: string };
 
 const servicos: Servico[] = [
@@ -78,62 +79,68 @@ const servicos: Servico[] = [
   },
 ];
 
-function slugify(s: string) {
-  return s
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+
 
 export default function ServicesSection() {
-  const [expanded, setExpanded] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<Servico | null>(null);
+
   return (
     <section id="servicos" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
       <RevealOnScroll>
         <div className="mb-12">
-          <span className="text-brand-blue-600 uppercase tracking-wider text-sm font-semibold">Serviços</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 [font-family:var(--font-display)] leading-tight">
+          <span className="inline-block py-1 px-3 rounded-full bg-brand-blue-600/10 border border-brand-blue-600/20 text-brand-blue-600 uppercase tracking-wider text-sm font-semibold mb-4">
+            Nossa Expertise
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold [font-family:var(--font-display)] leading-tight text-white">
             Portfólio de Serviços
           </h2>
-          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-3xl leading-relaxed">
-            Soluções especializadas com excelência tributária, jurídica e de governança.
+          <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed">
+            Soluções especializadas com excelência tributária, jurídica e de governança para impulsionar seu negócio.
           </p>
         </div>
       </RevealOnScroll>
-      <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: "1fr" }}>
+
+      <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {servicos.map((s, index) => (
           <RevealOnScroll key={s.titulo} delay={index * 50} direction="scale">
             <div
-              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-3 flex flex-col h-full transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
+              className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-6 h-full flex flex-col transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.05] hover:border-brand-gold-500/30 hover:shadow-2xl hover:shadow-brand-gold-500/10"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
+              <div className="mb-4 w-12 h-12 rounded-lg bg-brand-gold-500/10 flex items-center justify-center text-brand-gold-500 group-hover:scale-110 transition-transform duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+
+              <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
                 {s.titulo}
               </h3>
-              <p className="mt-2 text-white/80 leading-relaxed flex-grow">{s.descricao}</p>
-              <div className="mt-auto pt-4 flex items-center gap-3 flex-wrap">
+
+              <p className="text-white/60 leading-relaxed mb-6 flex-grow text-sm">
+                {s.descricao}
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/5">
                 <button
-                  className="inline-flex rounded-full px-5 py-2.5 bg-brand-gold-500 text-brand-navy-900 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                  onClick={() => setExpanded((prev) => (prev === slugify(s.titulo) ? null : slugify(s.titulo)))}
-                  aria-expanded={expanded === slugify(s.titulo)}
+                  className="group/btn inline-flex items-center gap-2 text-brand-gold-500 font-semibold text-sm hover:text-white transition-colors"
+                  onClick={() => setSelectedService(s)}
                 >
-                  Saiba mais
+                  Ver detalhes
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </button>
-              </div>
-              <div
-                className={`mt-3 overflow-hidden transition-all duration-500 ease-in-out ${
-                  expanded === slugify(s.titulo) ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="rounded-xl border border-white/10 bg-white/5 p-3 text-white/90 leading-relaxed">
-                  {s.detalhes}
-                </div>
               </div>
             </div>
           </RevealOnScroll>
         ))}
       </div>
+
+      <ServiceModal
+        isOpen={!!selectedService}
+        onClose={() => setSelectedService(null)}
+        service={selectedService}
+      />
     </section>
   );
 }

@@ -102,17 +102,17 @@ export default function ServicesSection() {
           </p>
         </div>
       </RevealOnScroll>
-      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: "1fr" }}>
+      <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: "1fr" }}>
         {servicos.map((s, index) => (
           <RevealOnScroll key={s.titulo} delay={index * 50} direction="scale">
             <div
-              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
+              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
             >
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
                 {s.titulo}
               </h3>
               <p className="mt-2 text-white/80 leading-relaxed flex-grow">{s.descricao}</p>
-              <div className="mt-auto pt-6 flex items-center gap-3 flex-wrap">
+              <div className="mt-auto pt-4 flex items-center gap-3 flex-wrap">
                 <button
                   className="inline-flex rounded-full px-5 py-2.5 bg-brand-gold-500 text-brand-navy-900 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                   onClick={() => setExpanded((prev) => (prev === slugify(s.titulo) ? null : slugify(s.titulo)))}
@@ -120,19 +120,13 @@ export default function ServicesSection() {
                 >
                   Saiba mais
                 </button>
-                <a
-                  href={`/servicos/${slugify(s.titulo)}`}
-                  className="inline-flex rounded-full px-5 py-2.5 bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 font-medium"
-                >
-                  Ver detalhes
-                </a>
               </div>
               <div
-                className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${
+                className={`mt-3 overflow-hidden transition-all duration-500 ease-in-out ${
                   expanded === slugify(s.titulo) ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90 leading-relaxed">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-white/90 leading-relaxed">
                   {s.detalhes}
                 </div>
               </div>

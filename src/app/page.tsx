@@ -6,7 +6,6 @@ import ContactCTASection from "@/components/ContactCTASection";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import AutoHideHeader from "@/components/AutoHideHeader";
-import RevealOnScroll from "@/components/RevealOnScroll";
 import CasesCarousel from "@/components/CasesCarousel";
 import CultureSection from "@/components/CultureSection";
 
@@ -16,13 +15,13 @@ export default function Home() {
       <AutoHideHeader />
 
       <InteractiveBackground>
-        <RevealOnScroll><HeroSection /></RevealOnScroll>
-        <RevealOnScroll><CredibilitySection /></RevealOnScroll>
-        <RevealOnScroll><ServicesSection /></RevealOnScroll>
-        <RevealOnScroll><AboutSection /></RevealOnScroll>
-        <RevealOnScroll><CasesCarousel /></RevealOnScroll>
-        <RevealOnScroll><CultureSection /></RevealOnScroll>
-        <RevealOnScroll><ContactCTASection /></RevealOnScroll>
+        <HeroSection />
+        <CredibilitySection />
+        <ServicesSection />
+        <AboutSection />
+        <CasesCarousel />
+        <CultureSection />
+        <ContactCTASection />
         <Footer />
       </InteractiveBackground>
     </div>

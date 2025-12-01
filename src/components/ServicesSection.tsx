@@ -90,23 +90,31 @@ function slugify(s: string) {
 export default function ServicesSection() {
   const [expanded, setExpanded] = useState<string | null>(null);
   return (
-    <section id="servicos" className="mx-auto max-w-7xl px-6 py-16">
-      <span className="text-brand-blue-600 uppercase tracking-wide text-sm">Serviços</span>
-      <h2 className="text-3xl font-semibold">Portfólio de Serviços</h2>
-      <p className="mt-2 text-white/80">
-        Soluções especializadas com excelência tributária, jurídica e de governança.
-      </p>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: "1fr" }}>
-        {servicos.map((s) => (
-          <RevealOnScroll key={s.titulo}>
+    <section id="servicos" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <RevealOnScroll>
+        <div className="mb-12">
+          <span className="text-brand-blue-600 uppercase tracking-wider text-sm font-semibold">Serviços</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-4 [font-family:var(--font-display)] leading-tight">
+            Portfólio de Serviços
+          </h2>
+          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-3xl leading-relaxed">
+            Soluções especializadas com excelência tributária, jurídica e de governança.
+          </p>
+        </div>
+      </RevealOnScroll>
+      <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: "1fr" }}>
+        {servicos.map((s, index) => (
+          <RevealOnScroll key={s.titulo} delay={index * 50} direction="scale">
             <div
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col h-full transition-transform duration-300 hover:-translate-y-1 hover:bg-white/8 hover:shadow-2xl"
+              className="group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 flex flex-col h-full transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:border-white/20 hover:shadow-2xl hover:shadow-brand-gold-500/10"
             >
-              <h3 className="text-xl font-semibold text-white">{s.titulo}</h3>
-              <p className="mt-2 text-white/80">{s.descricao}</p>
-              <div className="mt-auto pt-6 flex items-center gap-3">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight group-hover:text-brand-gold-500 transition-colors duration-300">
+                {s.titulo}
+              </h3>
+              <p className="mt-2 text-white/80 leading-relaxed flex-grow">{s.descricao}</p>
+              <div className="mt-auto pt-6 flex items-center gap-3 flex-wrap">
                 <button
-                  className="inline-flex rounded-full px-4 py-2 bg-brand-gold-500 text-brand-navy-900 shadow hover:shadow-lg"
+                  className="inline-flex rounded-full px-5 py-2.5 bg-brand-gold-500 text-brand-navy-900 font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                   onClick={() => setExpanded((prev) => (prev === slugify(s.titulo) ? null : slugify(s.titulo)))}
                   aria-expanded={expanded === slugify(s.titulo)}
                 >
@@ -114,17 +122,17 @@ export default function ServicesSection() {
                 </button>
                 <a
                   href={`/servicos/${slugify(s.titulo)}`}
-                  className="inline-flex rounded-full px-4 py-2 bg-white/10 text-white hover:bg-white/20"
+                  className="inline-flex rounded-full px-5 py-2.5 bg-white/10 text-white hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 font-medium"
                 >
                   Ver detalhes
                 </a>
               </div>
               <div
-                className={`mt-4 overflow-hidden transition-all duration-300 ${
-                  expanded === slugify(s.titulo) ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+                className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${
+                  expanded === slugify(s.titulo) ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="rounded-xl border border-white/10 bg-white/5 p-4 text-white/85">
+                <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-white/90 leading-relaxed">
                   {s.detalhes}
                 </div>
               </div>

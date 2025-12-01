@@ -13,28 +13,48 @@ export default function HeroSection() {
     <section className="relative overflow-hidden min-h-[90vh] flex items-center">
       <div className="absolute inset-0 bg-gradient-to-b from-brand-navy-800/60 via-brand-navy-800/30 to-transparent" />
       <div className="mx-auto max-w-7xl px-6 py-32 w-full">
-        <div className="space-y-10 max-w-4xl">
-          <h1 
-            className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight [font-family:var(--font-display)] transition-all duration-1000 ease-out ${
+        <div className="space-y-6 md:space-y-8 max-w-5xl">
+          {/* Título pequeno - hierarquia superior */}
+          <div 
+            className={`transition-all duration-1000 ease-out ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{ transitionDelay: '0.1s' }}
           >
-            Consultoria empresarial que transforma complexidade tributária em vantagem competitiva
-          </h1>
-          <p 
-            className={`text-xl md:text-2xl lg:text-3xl text-white/80 max-w-3xl leading-relaxed transition-all duration-1000 ease-out ${
+            <span className="text-sm md:text-base uppercase tracking-[0.2em] text-brand-gold-500 font-semibold letter-spacing-wider">
+              Consultoria estratégica empresarial
+            </span>
+          </div>
+
+          {/* Título principal - grande e impactante */}
+          <h1 
+            className={`text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-[-0.02em] [font-family:var(--font-display)] transition-all duration-1000 ease-out ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ transitionDelay: '0.3s' }}
+            style={{ transitionDelay: '0.2s' }}
+          >
+            <span className="block">Transformamos</span>
+            <span className="block text-brand-gold-500">complexidade do seu</span>
+            <span className="block">negócio em vantagem</span>
+            <span className="block text-brand-gold-500">competitiva</span>
+          </h1>
+
+          {/* Descrição */}
+          <p 
+            className={`text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl leading-relaxed transition-all duration-1000 ease-out ${
+              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+            style={{ transitionDelay: '0.4s' }}
           >
             Estratégia, governança e eficiência para diretoria e CFOs que exigem performance.
           </p>
+
+          {/* CTAs */}
           <div 
-            className={`flex flex-wrap gap-5 pt-4 transition-all duration-1000 ease-out ${
+            className={`flex flex-wrap gap-5 pt-6 transition-all duration-1000 ease-out ${
               mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ transitionDelay: '0.5s' }}
+            style={{ transitionDelay: '0.6s' }}
           >
             <a href="#servicos" className="btn-outline-premium">
               Conheça nossos serviços

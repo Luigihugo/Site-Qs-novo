@@ -1,5 +1,3 @@
-import RollingTags from "@/components/RollingTags";
-
 "use client";
 import { useEffect, useState } from "react";
 import RollingTags from "@/components/RollingTags";

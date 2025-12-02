@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
-import CredibilitySection from "@/components/CredibilitySection";
+
 import ContactCTASection from "@/components/ContactCTASection";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
@@ -16,7 +16,7 @@ export default function Home() {
 
       <InteractiveBackground>
         <HeroSection />
-        <CredibilitySection />
+
         <AboutSection />
         <ServicesSection />
         <CasesCarousel />

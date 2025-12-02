@@ -13,6 +13,8 @@ export default function AboutSection() {
     { value: "+2 Bi", label: "em projetos", detail: "conduzidos" },
     { value: "+1800", label: "projetos", detail: "atendidos" },
     { value: "Zero", label: "autuação", detail: "em projetos fiscais" },
+    { value: "+1 Bi", label: "em riqueza", detail: "protegida" },
+    { value: "80%", label: "de redução", detail: "no risco de fiscalização" },
   ];
 
   const benefits = [
@@ -61,7 +63,7 @@ export default function AboutSection() {
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
           {metrics.map((metric, index) => (
             <div
               key={metric.label}

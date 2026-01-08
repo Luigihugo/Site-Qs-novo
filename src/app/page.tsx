@@ -9,6 +9,7 @@ import InteractiveBackground from "@/components/InteractiveBackground";
 import AutoHideHeader from "@/components/AutoHideHeader";
 import CasesCarousel from "@/components/CasesCarousel";
 import CultureSection from "@/components/CultureSection";
+import FloatingContactBar from "@/components/FloatingContactBar";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
         <ContactCTASection />
         <Footer />
       </InteractiveBackground>
+
+      <FloatingContactBar />
     </div>
   );
 }

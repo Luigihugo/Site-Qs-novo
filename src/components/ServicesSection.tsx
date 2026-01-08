@@ -7,75 +7,75 @@ type Servico = { titulo: string; descricao: string; detalhes: string };
 const servicos: Servico[] = [
   {
     titulo: "Programa de Eficiência Tributária | PET",
-    descricao: "Métodos inovadores de otimização tributária.",
+    descricao: "Reduza sua carga tributária de forma segura e legal, aumentando o caixa da sua empresa.",
     detalhes:
-      "Mapeamos créditos e estruturas de eficiência com tecnologia e análise sênior, reduzindo carga tributária com segurança jurídica e impacto direto no caixa.",
+      "Identificamos créditos tributários e oportunidades de economia que você não sabia que existiam. Com tecnologia avançada e análise especializada, transformamos impostos em recursos para investir no crescimento do seu negócio. Resultado: economia real e impacto imediato no seu fluxo de caixa.",
   },
   {
     titulo: "Programa Sucessório e Patrimonial",
-    descricao: "Preservação e ampliação do patrimônio familiar.",
+    descricao: "Proteja e multiplique o patrimônio da sua família para as próximas gerações.",
     detalhes:
-      "Desenhamos estruturas societárias e patrimoniais resilientes, protegendo riqueza e garantindo continuidade com governança e compliance.",
+      "Estruturas inteligentes que preservam seu patrimônio de forma segura e legal. Planejamos a sucessão familiar evitando perdas tributárias e garantindo que sua riqueza seja transmitida de forma eficiente. Tranquilidade hoje, segurança para o futuro da sua família.",
   },
   {
     titulo: "Programa de Alinhamento Societário",
-    descricao: "Relações societárias adequadas para o futuro.",
+    descricao: "Elimine conflitos entre sócios e torne sua empresa mais ágil nas decisões estratégicas.",
     detalhes:
-      "Ajustamos acordos e mecanismos de governança para reduzir conflitos e aumentar previsibilidade nas decisões estratégicas.",
+      "Acordos societários claros e mecanismos de governança que previnem disputas e aceleram decisões importantes. Transformamos relacionamentos societários complexos em parcerias estratégicas produtivas, aumentando a competitividade do seu negócio.",
   },
   {
     titulo: "Compliance Fiscal Digital",
-    descricao: "Análise detalhada para identificar riscos fiscais.",
+    descricao: "Evite multas e autuações fiscais com monitoramento inteligente e preventivo.",
     detalhes:
-      "Monitoramos obrigações e cruzamentos fiscais com visão integrada, mitigando autuações e fortalecendo controles internos.",
+      "Sistema de monitoramento que identifica riscos antes que se tornem problemas. Protegemos sua empresa de autuações fiscais caras e trabalhosas, mantendo você sempre em conformidade. Economia de tempo, dinheiro e preocupações.",
   },
   {
     titulo: "Assessoria Fiscal de Rotina",
-    descricao: "Suporte contínuo para garantir conformidade fiscal.",
+    descricao: "Tenha um time de especialistas cuidando da sua empresa todos os dias.",
     detalhes:
-      "Atuação recorrente com revisão de apurações, respostas a fiscalizações e orientação técnica ao time interno.",
+      "Suporte contínuo de especialistas que revisam suas apurações, respondem fiscalizações e orientam seu time. Você foca no que faz melhor: crescer seu negócio. Nós cuidamos de toda a complexidade fiscal para você.",
   },
   {
     titulo: "Gestão de Passivos Tributários | GPT",
-    descricao: "Estratégias para otimizar a gestão dos passivos.",
+    descricao: "Reduza significativamente o valor das suas dívidas fiscais e negocie condições favoráveis.",
     detalhes:
-      "Tratamos autos de infração, execuções e passivos com estratégia jurídica e fiscal integrada, priorizando redução de risco e custo.",
+      "Estratégias comprovadas para reduzir passivos tributários e negociar condições que cabem no seu orçamento. Transformamos dívidas fiscais pesadas em soluções viáveis, priorizando sempre a redução de custos e riscos para sua empresa.",
   },
   {
     titulo: "Transição da Reforma Tributária",
-    descricao: "Preparação estratégica ao novo cenário fiscal.",
+    descricao: "Prepare-se para a nova realidade fiscal sem perder competitividade ou pagar mais impostos.",
     detalhes:
-      "Simulamos impactos, redesenhamos processos e políticas para uma migração segura e eficiente ao novo modelo tributário.",
+      "Antecipe-se às mudanças e transforme a Reforma Tributária em oportunidade. Simulamos impactos, ajustamos processos e criamos estratégias para que sua empresa não só se adapte, mas se beneficie do novo cenário fiscal.",
   },
   {
     titulo: "Controladoria, Consultoria e Assessoria Jurídica | CCA",
-    descricao: "Integração de serviços jurídicos personalizados.",
+    descricao: "Decisões estratégicas mais inteligentes com visão integrada jurídica e financeira.",
     detalhes:
-      "Integramos visão jurídica e financeira para suportar decisões executivas, contratos e governança com foco em performance.",
+      "Suporte executivo completo que integra aspectos jurídicos e financeiros. Tomamos decisões mais seguras, estruturamos contratos mais vantajosos e implementamos governança que aumenta a performance do seu negócio.",
   },
   {
     titulo: "Fusões e Aquisições | M&A",
-    descricao: "Assessoria em operações de M&A.",
+    descricao: "Realize operações de M&A com segurança, preservando valor e evitando surpresas desagradáveis.",
     detalhes:
-      "Suporte em due diligence, estruturação e integração pós‑deal, preservando valor e mitigando riscos fiscais e societários.",
+      "Due diligence completa, estruturação inteligente e integração eficiente. Garantimos que sua operação de M&A preserve valor, minimize riscos e maximize oportunidades. Sua transação segura e bem-sucedida.",
   },
   {
     titulo: "Planejamento Tributário",
-    descricao: "Estratégias sobre a carga tributária.",
+    descricao: "Otimize sua carga tributária com estratégias personalizadas e resultados mensuráveis.",
     detalhes:
-      "Modelagem de cenários e estruturas para otimizar a carga com segurança, aderência e ROI mensurável.",
+      "Planejamento estratégico que modela cenários e cria estruturas tributárias otimizadas. Cada estratégia é personalizada para seu negócio, com segurança jurídica e ROI comprovado. Economia real e sustentável.",
   },
   {
     titulo: "Operações Estruturadas e Negociações de Dívidas",
-    descricao: "Modelagens complexas e negociação estratégica.",
+    descricao: "Negocie dívidas e estruture operações financeiras complexas com condições favoráveis.",
     detalhes:
-      "Desenvolvemos operações financeiras e negociações com credores, alinhadas à estratégia e à governança.",
+      "Operações financeiras inteligentes e negociações estratégicas que alinham soluções com seus objetivos de negócio. Reduzimos custos, melhoramos condições e criamos estruturas que fortalecem sua empresa financeiramente.",
   },
   {
     titulo: "Advocacia Empresarial",
-    descricao: "Representação especializada em demandas corporativas.",
+    descricao: "Proteja sua empresa em disputas e tenha suporte jurídico especializado quando precisar.",
     detalhes:
-      "Atuação contenciosa e consultiva com foco em negócios, reduzindo exposição e sustentando decisões da diretoria.",
+      "Representação jurídica focada em resultados empresariais. Atuamos preventivamente para reduzir exposição a riscos e defensivamente quando necessário, sempre alinhados com as decisões estratégicas da sua diretoria.",
   },
 ];
 
@@ -95,7 +95,8 @@ export default function ServicesSection() {
             Portfólio de Serviços
           </h2>
           <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed">
-            Soluções especializadas com excelência tributária, jurídica e de governança para impulsionar seu negócio.
+            Transforme desafios fiscais em vantagens competitivas. Nossas soluções personalizadas geram economia real, 
+            reduzem riscos e maximizam resultados financeiros para sua empresa crescer com segurança e eficiência.
           </p>
         </div>
       </RevealOnScroll>

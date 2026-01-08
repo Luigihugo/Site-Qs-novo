@@ -1,100 +1,143 @@
 "use client";
-import { useState } from "react";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
-const CASES = [
-  { result: "Redução de 18% na carga efetiva", quote: "A QS nos trouxe previsibilidade e ROI", metric: "ROI 3x" },
-  { result: "Mitigação de autuações em 80%", quote: "Governança que dá tranquilidade ao board", metric: "80%" },
-  { result: "Estrutura sucessória com proteção de 1 Bi", quote: "Patrimônio protegido e continuidade", metric: "1 Bi" },
+type Case = {
+  titulo: string;
+  segmento: string;
+  desafio: string;
+  solucao: string;
+  resultado: string;
+  metricas: string[];
+};
+
+const cases: Case[] = [
+  {
+    titulo: "Otimização Tributária em Empresa do Setor Comercial",
+    segmento: "Comércio",
+    desafio: "Empresa de grande porte enfrentava carga tributária elevada, impactando diretamente a competitividade e margem de lucro. Necessidade de identificar oportunidades de economia sem comprometer a segurança jurídica.",
+    solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Desenvolvemos planejamento tributário personalizado com foco em redução de carga e otimização de processos.",
+    resultado: "Redução significativa na carga tributária efetiva, com impacto positivo imediato no fluxo de caixa. Estrutura implementada garantiu segurança jurídica e conformidade fiscal.",
+    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
+  },
+  {
+    titulo: "Estruturação Patrimonial e Sucessória",
+    segmento: "Serviços",
+    desafio: "Grupo empresarial familiar necessitava proteger patrimônio significativo e estruturar sucessão de forma eficiente, evitando perdas tributárias e garantindo continuidade dos negócios.",
+    solucao: "Criamos estrutura societária e patrimonial personalizada, com mecanismos de governança e proteção. Planejamento sucessório detalhado que preserva riqueza e facilita transição geracional.",
+    resultado: "Patrimônio protegido e estruturado de forma eficiente. Sucessão planejada com redução de custos tributários e garantia de continuidade operacional para as próximas gerações.",
+    metricas: ["Proteção patrimonial", "Redução de custos sucessórios", "Governança implementada"],
+  },
+  {
+    titulo: "Gestão de Passivos e Negociação Fiscal",
+    segmento: "Indústria",
+    desafio: "Empresa industrial acumulava passivos tributários significativos, com risco de execução fiscal e impacto negativo na operação. Necessidade de estratégia para reduzir exposição e negociar condições viáveis.",
+    solucao: "Realizamos análise detalhada dos passivos, identificando oportunidades de redução e defesas técnicas. Estruturamos estratégia de negociação com foco em redução de valores e condições de pagamento adequadas ao fluxo de caixa.",
+    resultado: "Redução expressiva no valor dos passivos através de defesas técnicas e negociação estratégica. Condições de pagamento alinhadas à capacidade financeira da empresa, eliminando riscos operacionais.",
+    metricas: ["Redução de passivos", "Negociação bem-sucedida", "Riscos mitigados"],
+  },
+  {
+    titulo: "Compliance e Prevenção de Autuações",
+    segmento: "Moda",
+    desafio: "Empresa do setor de moda enfrentava risco constante de autuações fiscais devido à complexidade das operações e múltiplas unidades. Necessidade de sistema preventivo e monitoramento contínuo.",
+    solucao: "Implementamos sistema de compliance fiscal digital com monitoramento em tempo real. Revisão periódica de obrigações, cruzamento de dados e alertas preventivos para evitar inconsistências.",
+    resultado: "Redução drástica no risco de autuações através de monitoramento preventivo. Conformidade fiscal garantida em todas as operações, proporcionando tranquilidade e foco no negócio.",
+    metricas: ["Redução de risco de autuações", "Conformidade garantida", "Monitoramento contínuo"],
+  },
 ];
 
 export default function CasesCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % CASES.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + CASES.length) % CASES.length);
-  };
-
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
+    <section id="cases" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <RevealOnScroll>
+        <div className="mb-12">
           <span className="inline-block py-1 px-3 rounded-full bg-brand-blue-600/10 border border-brand-blue-600/20 text-brand-blue-600 uppercase tracking-wider text-sm font-semibold mb-4">
-            Resultados Comprovados
+            Cases de Sucesso
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white [font-family:var(--font-display)]">
-            Galeria de Sucesso
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold [font-family:var(--font-display)] leading-tight text-white">
+            Resultados que Transformam Negócios
           </h2>
+          <p className="mt-6 text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed">
+            Conheça alguns dos nossos cases de sucesso. Cada projeto é único, mas todos compartilham o mesmo objetivo: 
+            transformar desafios em oportunidades reais de crescimento e eficiência.
+          </p>
         </div>
+      </RevealOnScroll>
 
-        {/* Controls */}
-        <div className="flex gap-3">
-          <button
-            onClick={prevSlide}
-            className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-gold-500/50 transition-all group"
-            aria-label="Anterior"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white group-hover:text-brand-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextSlide}
-            className="p-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-gold-500/50 transition-all group"
-            aria-label="Próximo"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white group-hover:text-brand-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
+      <div className="mt-16 space-y-8 md:space-y-12">
+        {cases.map((caseItem, index) => (
+          <RevealOnScroll key={index} delay={index * 100}>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-12 relative overflow-hidden group hover:bg-white/[0.04] hover:border-brand-gold-500/30 transition-all duration-500">
+              <div className="absolute top-0 right-0 p-8 opacity-5 text-9xl font-serif text-brand-gold-500 leading-none select-none">
+                {index + 1}
+              </div>
 
-      <div className="relative overflow-hidden">
-        <div
-          className="flex transition-transform duration-700 ease-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {CASES.map((c, i) => (
-            <div key={i} className="min-w-full px-4">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-12 relative overflow-hidden group hover:bg-white/[0.04] transition-colors">
-                <div className="absolute top-0 right-0 p-8 opacity-10 text-9xl font-serif text-brand-gold-500 leading-none select-none">
-                  "
+              <div className="relative z-10">
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <span className="inline-block py-1 px-3 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 text-xs font-semibold uppercase">
+                    {caseItem.segmento}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-brand-gold-500 transition-colors">
+                    {caseItem.titulo}
+                  </h3>
                 </div>
 
-                <div className="relative z-10">
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                    {c.result}
+                <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-8">
+                  <div>
+                    <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
+                      Desafio
+                    </h4>
+                    <p className="text-white/70 leading-relaxed text-sm md:text-base">
+                      {caseItem.desafio}
+                    </p>
                   </div>
-                  <blockquote className="text-lg md:text-xl text-white/70 italic mb-8 border-l-4 border-brand-gold-500 pl-6">
-                    "{c.quote}"
-                  </blockquote>
-                  <div className="inline-flex items-center gap-3 rounded-full px-5 py-2 bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 font-bold">
-                    <span>Impacto:</span>
-                    <span className="text-white">{c.metric}</span>
+
+                  <div>
+                    <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
+                      Solução
+                    </h4>
+                    <p className="text-white/70 leading-relaxed text-sm md:text-base">
+                      {caseItem.solucao}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
+                      Resultado
+                    </h4>
+                    <p className="text-white/70 leading-relaxed text-sm md:text-base mb-4">
+                      {caseItem.resultado}
+                    </p>
+                    <div className="space-y-2">
+                      {caseItem.metricas.map((metrica, idx) => (
+                        <div
+                          key={idx}
+                          className="inline-block mr-2 mb-2 px-3 py-1 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 text-xs font-medium"
+                        >
+                          {metrica}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Indicators */}
-      <div className="flex justify-center gap-2 mt-8">
-        {CASES.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentIndex(i)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-brand-gold-500" : "w-2 bg-white/20 hover:bg-white/40"
-              }`}
-            aria-label={`Ir para slide ${i + 1}`}
-          />
+          </RevealOnScroll>
         ))}
       </div>
+
+      <RevealOnScroll delay={400}>
+        <div className="mt-16 text-center">
+          <p className="text-white/60 text-base md:text-lg mb-6">
+            Quer resultados como estes para sua empresa?
+          </p>
+          <a
+            href="#contato"
+            className="btn-premium inline-block"
+          >
+            Fale com nossos especialistas
+          </a>
+        </div>
+      </RevealOnScroll>
     </section>
   );
 }

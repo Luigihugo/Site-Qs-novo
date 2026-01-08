@@ -1,5 +1,6 @@
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import QuemSomosSection from "@/components/QuemSomosSection";
 import ServicesSection from "@/components/ServicesSection";
 
 import ContactCTASection from "@/components/ContactCTASection";
@@ -18,6 +19,7 @@ export default function Home() {
         <HeroSection />
 
         <AboutSection />
+        <QuemSomosSection />
         <ServicesSection />
         <CasesCarousel />
         <CultureSection />

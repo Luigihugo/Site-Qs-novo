@@ -2,11 +2,10 @@
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function ContactCTASection() {
-  const whatsappNumber = "[WHATSAPP_NUMBER]"; // Placeholder - substitua pelo número real
   const whatsappMessage = encodeURIComponent(
     "Olá! Gostaria de conhecer mais sobre os serviços da QS Consultoria e como vocês podem ajudar minha empresa."
   );
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/5521976133377?text=${whatsappMessage}`;
 
   return (
     <section id="contato" className="mx-auto max-w-7xl px-6 py-24 md:py-32">

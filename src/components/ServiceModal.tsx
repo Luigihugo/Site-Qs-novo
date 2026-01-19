@@ -82,7 +82,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
 
                         <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-4 justify-end">
                             <a
-                                href={`https://wa.me/[WHATSAPP_NUMBER]?text=Olá! Gostaria de mais informações sobre: ${encodeURIComponent(service.titulo)}`}
+                                href={`https://wa.me/5521976133377?text=Olá! Gostaria de mais informações sobre: ${encodeURIComponent(service.titulo)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-premium px-6 py-3 text-sm text-center"

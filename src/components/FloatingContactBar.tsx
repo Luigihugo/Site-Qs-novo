@@ -8,11 +8,7 @@ export default function FloatingContactBar() {
     telefone: "",
   });
 
-  const whatsappNumber = "[WHATSAPP_NUMBER]";
-  const whatsappMessage = encodeURIComponent(
-    "Olá! Gostaria de conhecer mais sobre os serviços da QS Consultoria."
-  );
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappUrl = "https://wa.me/5521976133377";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({

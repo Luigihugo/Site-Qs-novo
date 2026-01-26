@@ -12,12 +12,16 @@ export default function AutoHideHeader() {
     const onScroll = () => {
       const y = window.scrollY;
       setScrolled(y > 20);
-      setHidden(y > lastY && y > 100);
+      if (!mobileMenuOpen) {
+        setHidden(y > lastY && y > 100);
+      } else {
+        setHidden(false);
+      }
       setLastY(y);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [lastY]);
+  }, [lastY, mobileMenuOpen]);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -36,32 +40,27 @@ export default function AutoHideHeader() {
     { label: "Nossa expertise", href: "#servicos", type: "anchor" },
     { label: "Quem confia em nós", href: "/clientes", type: "link" },
     { label: "Cases", href: "#cases", type: "anchor" },
-    { label: "Parceiros", href: "#parceiros", type: "anchor" }, // Scroll para seção de parceiros
+    { label: "Parceiros", href: "#parceiros", type: "anchor" },
     { label: "Contato", href: "#contato", type: "anchor" },
     { label: "Faça parte do time QS", href: "/trabalhe-conosco", type: "link" },
   ];
 
-  const handleNavClick = (href: string, type: string, scrollOffset?: number) => {
+  const handleNavClick = (href: string, type: string) => {
     if (type === "anchor") {
-      // Se estiver em uma página diferente da home, redirecionar para home com âncora
       if (window.location.pathname !== "/") {
-        // Navegar para home com hash - a página vai carregar do topo e depois scrollar
         window.location.href = `/${href}`;
         return;
       }
       
-      // Se estiver na home, fazer scroll suave imediatamente
       setMobileMenuOpen(false);
       
-      // Pequeno delay para fechar menu mobile antes do scroll
       setTimeout(() => {
         const element = document.querySelector(href);
         if (element) {
           const headerHeight = 80;
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offset = scrollOffset || 0;
           window.scrollTo({
-            top: elementPosition + offset - headerHeight,
+            top: elementPosition - headerHeight,
             behavior: "smooth",
           });
         }
@@ -72,142 +71,184 @@ export default function AutoHideHeader() {
   };
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-500 ease-out ${hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
-        } ${scrolled ? "backdrop-blur-xl bg-brand-navy-900/80 border-b border-white/10" : "backdrop-blur-md bg-brand-navy-900/40"
+    <>
+      <header
+        className={`sticky top-0 z-[10000] transition-all duration-500 ease-out ${
+          hidden ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"
+        } ${
+          scrolled ? "bg-brand-navy-900 border-b border-white/10" : "bg-brand-navy-900"
         }`}
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 md:py-4 flex items-center justify-between gap-4">
-        <a 
-          href="/" 
-          onClick={(e) => {
-            // Limpar hash ao clicar na logo para voltar ao topo
-            if (window.location.pathname === "/") {
-              e.preventDefault();
-              window.history.replaceState(null, "", "/");
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            } else {
-              // Se estiver em outra página, limpar hash e voltar para home
-              window.location.href = "/";
-            }
-          }}
-          className="flex items-center flex-shrink-0"
-        >
-          {/* Logo Image */}
-          <img
-            src="/logo.png"
-            alt="QS Consultoria"
-            className="h-5 md:h-7 w-auto object-contain brightness-0 invert"
-          />
-        </a>
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 md:py-4 flex items-center justify-between gap-4">
+          {/* Logo */}
+          <a 
+            href="/" 
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                window.history.replaceState(null, "", "/");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = "/";
+              }
+            }}
+            className="flex items-center flex-shrink-0"
+          >
+            <img
+              src="/logo.png"
+              alt="QS Consultoria"
+              className="h-5 md:h-7 w-auto object-contain brightness-0 invert"
+            />
+          </a>
 
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2 flex-wrap justify-end flex-1 min-w-0">
-          {menuItems.slice(0, 4).map((item) => (
+          {/* Desktop Menu - Visível apenas em telas grandes */}
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2 flex-wrap justify-end flex-1 min-w-0">
+            {menuItems.slice(0, 4).map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => {
+                  if (item.type === "anchor") {
+                    e.preventDefault();
+                    handleNavClick(item.href, item.type);
+                  }
+                }}
+                className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
             <a
-              key={item.label}
-              href={item.href}
+              href={menuItems[4].href}
               onClick={(e) => {
-                if (item.type === "anchor") {
+                if (menuItems[4].type === "anchor") {
                   e.preventDefault();
-                  handleNavClick(item.href, item.type);
+                  handleNavClick(menuItems[4].href, menuItems[4].type);
                 }
               }}
               className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
             >
-              {item.label}
+              {menuItems[4].label}
             </a>
-          ))}
-          <a
-            href={menuItems[4].href}
-            onClick={(e) => {
-              if (menuItems[4].type === "anchor") {
-                e.preventDefault();
-                handleNavClick(menuItems[4].href, menuItems[4].type);
-              }
-            }}
-            className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-          >
-            {menuItems[4].label}
-          </a>
-          <a
-            href={menuItems[5].href}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick(menuItems[5].href, menuItems[5].type);
-            }}
-            className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-          >
-            {menuItems[5].label}
-          </a>
-          <a
-            href={menuItems[6].href}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick(menuItems[6].href, menuItems[6].type);
-            }}
-            className="rounded-full px-3 xl:px-4 py-1.5 bg-brand-gold-500 text-brand-navy-900 font-semibold text-xs hover:bg-brand-gold-400 hover:scale-105 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
-          >
-            {menuItems[6].label}
-          </a>
-          <a
-            href={menuItems[7].href}
-            className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-          >
-            {menuItems[7].label}
-          </a>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed inset-0 top-[73px] bg-brand-navy-900/98 backdrop-blur-xl z-40 transition-all duration-300 overflow-y-auto ${
-          mobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col p-4 sm:p-6 space-y-3 max-h-[calc(100vh-73px)]">
-          {menuItems.map((item, index) => (
             <a
-              key={item.label}
-              href={item.href}
+              href={menuItems[5].href}
               onClick={(e) => {
-                if (item.type === "anchor") {
-                  e.preventDefault();
-                  handleNavClick(item.href, item.type);
-                } else {
-                  setMobileMenuOpen(false);
-                }
+                e.preventDefault();
+                handleNavClick(menuItems[5].href, menuItems[5].type);
               }}
-              className={`rounded-lg px-4 py-3 text-sm sm:text-base font-medium transition-all duration-300 text-center ${
-                index === 6
-                  ? "bg-brand-gold-500 text-brand-navy-900 hover:bg-brand-gold-400"
-                  : "bg-white/10 hover:bg-white/20 border border-white/20 text-white"
-              }`}
+              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
             >
-              {item.label}
+              {menuItems[5].label}
             </a>
-          ))}
-        </nav>
-      </div>
+            <a
+              href={menuItems[6].href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(menuItems[6].href, menuItems[6].type);
+              }}
+              className="rounded-full px-3 xl:px-4 py-1.5 bg-brand-gold-500 text-brand-navy-900 font-semibold text-xs hover:bg-brand-gold-400 hover:scale-105 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
+            >
+              {menuItems[6].label}
+            </a>
+            <a
+              href={menuItems[7].href}
+              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            >
+              {menuItems[7].label}
+            </a>
+          </nav>
 
-      <ScrollProgress />
-    </header>
+          {/* Botão Hambúrguer - Visível apenas em telas pequenas */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden w-[48px] h-[48px] text-white hover:bg-white/10 rounded-full transition-all duration-300 flex items-center justify-center hover:scale-105"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        <ScrollProgress />
+      </header>
+
+      {/* Menu Mobile - Drawer lateral pela direita - Fora do header para sobrepor todo conteúdo */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop escuro com blur */}
+          <div
+            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[99998] transition-opacity duration-300 animate-fade-in"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Drawer lateral pela direita */}
+          <div className="lg:hidden fixed top-0 right-0 h-full w-[85vw] max-w-[360px] bg-brand-navy-900/95 backdrop-blur-xl border-l border-white/10 z-[99999] shadow-2xl shadow-black/50 transform transition-transform duration-300 ease-out overflow-y-auto animate-slide-in-right">
+            <div className="flex flex-col h-full">
+              {/* Header do Drawer */}
+              <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-white/10">
+                <img
+                  src="/logo.png"
+                  alt="QS Consultoria"
+                  className="h-6 w-auto object-contain brightness-0 invert"
+                />
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                  aria-label="Fechar menu"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Menu Items */}
+              <nav className="flex flex-col px-6 py-6 space-y-3 flex-1">
+                {menuItems.map((item, index) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.type === "anchor") {
+                        e.preventDefault();
+                        handleNavClick(item.href, item.type);
+                      } else {
+                        setMobileMenuOpen(false);
+                      }
+                    }}
+                    className={`group relative rounded-full px-5 py-3.5 text-sm font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap flex items-center justify-center animate-fade-in-up opacity-0 ${
+                      index === 6
+                        ? "bg-brand-gold-500 text-brand-navy-900 hover:bg-brand-gold-400 shadow-lg hover:shadow-xl hover:shadow-brand-gold-500/30 font-semibold"
+                        : "bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white"
+                    }`}
+                    style={{ animationDelay: `${index * 50 + 100}ms` }}
+                  >
+                    <span className="relative z-10">{item.label}</span>
+                    {index === 6 && (
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    )}
+                  </a>
+                ))}
+              </nav>
+
+              {/* Footer do Drawer */}
+              <div className="px-6 pb-6 pt-4 border-t border-white/10">
+                <p className="text-xs text-white/50 text-center">
+                  QS Consultoria
+                </p>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 }

@@ -28,7 +28,7 @@ export default function Footer() {
           <span className="text-white/60 text-sm">Siga-nos:</span>
           <div className="flex items-center gap-4">
             <a
-              href="[INSTAGRAM_LINK]"
+              href="https://www.instagram.com/qstributos/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-brand-gold-500 transition-colors duration-300"
@@ -44,7 +44,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="[LINKEDIN_LINK]"
+              href="https://br.linkedin.com/company/qualitysupport"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-brand-gold-500 transition-colors duration-300"

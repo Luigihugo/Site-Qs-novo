@@ -34,7 +34,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent z-0" />
             </a>
             <a href="#servicos" className="btn-outline-premium text-base md:text-lg px-8 py-4 hover:bg-white/5">
-              Nossos Serviços
+              Nossa expertise
             </a>
           </div>
 

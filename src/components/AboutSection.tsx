@@ -19,17 +19,17 @@ export default function AboutSection() {
     { year: "2025", event: "Abertura de filial em Fortaleza" },
   ];
 
-  // Missão, Visão, Valores - placeholders
+  // Missão, Visão, Valores
   const valores = {
-    proposito: "[PROPÓSITO: Texto sobre o propósito da QS]",
-    filosofia: "[FILOSOFIA: Texto sobre a filosofia da empresa]",
-    missao: "[MISSÃO: Texto da missão da QS]",
-    visao: "[VISÃO: Texto da visão da QS]",
+    missao: "Transformar a realidade tributária de clientes, promovendo soluções eficientes e inovadoras.",
+    visao: "Ser o principal parceiro de inteligência tributária de nossos clientes, tornando-se referência nacional em soluções inovadoras e de alto valor agregado.",
     valores: [
-      "[Valor 1]",
-      "[Valor 2]",
-      "[Valor 3]",
-      "[Valor 4]",
+      "Excelência",
+      "Inovação",
+      "Transparência",
+      "Ética",
+      "Comprometimento",
+      "Confiabilidade",
     ],
   };
 
@@ -51,11 +51,11 @@ export default function AboutSection() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-brand-blue-100/80 max-w-3xl mx-auto mb-6">
-            Atuamos com visão executiva para destravar eficiência tributária, fortalecer governança e sustentar decisões de alto impacto.
+            Atuamos com visão executiva para destravar eficiência empresarial, fortalecer governança e sustentar decisões de alto impacto.
           </p>
           {/* Texto introdutório sobre a QS */}
           <p className="text-base md:text-lg text-white/70 max-w-4xl mx-auto leading-relaxed">
-            A QS Consultoria é uma empresa especializada em consultoria tributária e jurídica, fundada em 03/11/2014. 
+            A QS Consultoria é uma empresa especializada em eficiência empresarial, fundada em 03/11/2014. 
             Com mais de uma década de experiência, transformamos desafios complexos em oportunidades estratégicas, 
             oferecendo soluções personalizadas que geram eficiência, reduzem riscos e maximizam resultados para nossos clientes.
           </p>
@@ -101,36 +101,28 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Propósito, Filosofia, Missão, Visão, Valores */}
+        {/* Missão, Visão, Valores */}
         <div className="mb-16 md:mb-24">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
             Nossos Princípios
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
-              <h4 className="text-xl font-bold text-brand-gold-500 mb-4">Propósito</h4>
-              <p className="text-white/70 leading-relaxed">{valores.proposito}</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
-              <h4 className="text-xl font-bold text-brand-gold-500 mb-4">Filosofia</h4>
-              <p className="text-white/70 leading-relaxed">{valores.filosofia}</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-gold-500/30 hover:bg-white/10">
               <h4 className="text-xl font-bold text-brand-gold-500 mb-4">Missão</h4>
               <p className="text-white/70 leading-relaxed">{valores.missao}</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-gold-500/30 hover:bg-white/10">
               <h4 className="text-xl font-bold text-brand-gold-500 mb-4">Visão</h4>
               <p className="text-white/70 leading-relaxed">{valores.visao}</p>
             </div>
           </div>
           
           {/* Valores */}
-          <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
-            <h4 className="text-xl font-bold text-brand-gold-500 mb-6">Valores</h4>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-gold-500/30 hover:bg-white/10">
+            <h4 className="text-xl font-bold text-brand-gold-500 mb-6 text-center">Valores</h4>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {valores.valores.map((valor, index) => (
-                <div key={index} className="text-center p-4 rounded-lg bg-white/5 border border-white/10">
+                <div key={index} className="text-center p-4 rounded-lg bg-white/5 border border-white/10 hover:border-brand-gold-500/30 hover:bg-white/10 transition-all duration-300 hover:scale-105">
                   <p className="text-white/80 font-medium">{valor}</p>
                 </div>
               ))}
@@ -175,16 +167,12 @@ export default function AboutSection() {
               Trabalhamos em parceria com empresas que compartilham nossos valores de excelência e inovação.
             </p>
             <a
-              href="#contato"
-              className="btn-premium inline-block mr-4"
+              href="https://www.qspartners.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-premium inline-block"
             >
-              Solicite uma proposta de parceria
-            </a>
-            <a
-              href="/qspartners"
-              className="btn-outline-premium inline-block"
-            >
-              QS Partners
+              QSPartners
             </a>
           </div>
         </div>

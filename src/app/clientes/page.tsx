@@ -58,7 +58,7 @@ const clientes: Cliente[] = [
   { id: 7, nome: "Supermercado Rede Avistão", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Supermercado_Rede_Avistao.jpg", categoria: "Comércio" },
   { id: 8, nome: "CityFarma", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_CityFarma.jpg", categoria: "Comércio" },
   { id: 9, nome: "Sindilojas RJ", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Sindilojas_RJ.png", categoria: "Comércio" },
-  { id: 10, nome: "Spoleto", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Spoleto.png", categoria: "Comércio" },
+  { id: 10, nome: "Spoleto", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Spoleto.jpg", categoria: "Comércio" },
   { id: 11, nome: "Supergiro Distribuidora", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Supergiro_Distribuidora.png", categoria: "Comércio" },
   { id: 12, nome: "Brasil Tropical", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Hotel_Brasil_Tropical.jpeg", categoria: "Comércio" },
   { id: 13, nome: "Frutas Lessa", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Frutas_Lessa.png", categoria: "Comércio" },
@@ -87,12 +87,12 @@ const clientes: Cliente[] = [
   { id: 41, nome: "Uniodonto", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Uniodonto.jpg", categoria: "Serviços" },
   { id: 42, nome: "Escola Canto dos Pássaros", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Escola_Canto_dos_Passaros.png", categoria: "Serviços" },
   { id: 43, nome: "Inspired Education", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Inspired_Education.png", categoria: "Serviços" },
-  { id: 44, nome: "Raiz Educação", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Raiz_Educação.png", categoria: "Serviços" },
+  { id: 44, nome: "Raiz Educação", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Raiz_Educacao.png", categoria: "Serviços" },
   { id: 45, nome: "Giga Transportes", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Giga_Transportes.png", categoria: "Serviços" },
   { id: 46, nome: "Trem Corcovado", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_trem_corcovado.png", categoria: "Serviços" },
   { id: 47, nome: "Veneza Serviços Terceirizados", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Veneza_servicos_terceirizados.png", categoria: "Serviços" },
   { id: 48, nome: "Construjet Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Construjet_Engenharia.png", categoria: "Serviços" },
-  { id: 49, nome: "Sig Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Sig_Engenharia (1).png", categoria: "Serviços" },
+  { id: 49, nome: "Sig Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Sig_Engenharia.png", categoria: "Serviços" },
   { id: 50, nome: "Inace Iates", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Inace_iates2.png", categoria: "Serviços" },
   { id: 51, nome: "Águas Passa Quatro", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Aguas_Passa_Quatro.png", categoria: "Serviços" },
   { id: 52, nome: "Organização das Cooperativas Brasileiras", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Organização_das_Cooperativas_Brasileiras.jpg", categoria: "Serviços" },
@@ -143,23 +143,24 @@ export default function ClientesPage() {
             </div>
           </section>
 
-          {/* Grid de Logos - Padding reduzido */}
-          <section className="relative py-6 md:py-8 bg-white">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          {/* Grid de Logos - Estrutura Visual Premium */}
+          <section className="relative py-12 md:py-16 bg-white">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {clientesOrdenados.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-12">
                   {clientesOrdenados.map((cliente) => (
                     <div
                       key={cliente.id}
-                      className="group flex items-center justify-center p-2 transition-all duration-500 hover:scale-110"
+                      className="group flex items-center justify-center"
                     >
-                      <div className="relative w-[140px] h-[80px] flex items-center justify-center">
+                      {/* Caixa padrão transparente com altura fixa */}
+                      <div className="relative w-full h-24 flex items-center justify-center p-4 transition-all duration-500 hover:scale-105">
                         <Image
                           src={cliente.logo.replace(/ /g, '%20')}
                           alt={cliente.nome}
                           width={140}
-                          height={80}
-                          className="object-contain w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500 filter"
+                          height={96}
+                          className="object-contain max-w-[140px] w-auto h-auto max-h-full grayscale group-hover:grayscale-0 transition-all duration-500 filter"
                           unoptimized
                           onError={(e) => {
                             console.error(`Erro ao carregar logo: ${cliente.logo}`, e);
@@ -170,7 +171,7 @@ export default function ClientesPage() {
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-8">
+                <div className="text-center py-16">
                   <p className="text-brand-navy-900/60 text-lg">
                     Nenhum cliente encontrado.
                   </p>

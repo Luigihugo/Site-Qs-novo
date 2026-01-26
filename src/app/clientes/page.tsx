@@ -144,10 +144,10 @@ export default function ClientesPage() {
           </section>
 
           {/* Grid de Logos - Estrutura Visual Premium */}
-          <section className="relative py-12 md:py-16 bg-white">
+          <section className="relative py-16 md:py-20 lg:py-24 bg-white">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {clientesOrdenados.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-12">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-12 md:gap-y-16 lg:gap-y-20 gap-x-8 md:gap-x-10 lg:gap-x-12">
                   {clientesOrdenados.map((cliente) => (
                     <div
                       key={cliente.id}

@@ -4,6 +4,7 @@ import AutoHideHeader from "@/components/AutoHideHeader";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import FloatingContactBar from "@/components/FloatingContactBar";
 
 export default function TrabalheConoscoPage() {
   const [formData, setFormData] = useState({
@@ -226,6 +227,8 @@ export default function TrabalheConoscoPage() {
 
         <Footer />
       </InteractiveBackground>
+
+      <FloatingContactBar />
     </div>
   );
 }

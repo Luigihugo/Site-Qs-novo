@@ -154,9 +154,14 @@ body {
   animation-delay: 500ms;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling - apenas quando não há hash para prevenir scroll automático */
 html {
   scroll-behavior: smooth;
+}
+
+/* Prevenir scroll automático quando há hash na URL */
+html:has(:target) {
+  scroll-behavior: auto;
 }
 
 /* Selection styling */

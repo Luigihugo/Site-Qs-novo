@@ -18,11 +18,13 @@ export default function BackToTop() {
     }, []);
 
     const scrollToTop = () => {
+        // Prevenir scroll automático durante animação
         window.scrollTo({
             top: 0,
             behavior: "smooth",
         });
     };
+
 
     return (
         <button

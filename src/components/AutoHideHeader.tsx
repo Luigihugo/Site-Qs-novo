@@ -110,7 +110,7 @@ export default function AutoHideHeader() {
               onClick={(e) => {
                 if (item.type === "anchor") {
                   e.preventDefault();
-                  handleNavClick(item.href, item.type, item.scrollOffset);
+                  handleNavClick(item.href, item.type);
                 }
               }}
               className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
@@ -123,7 +123,7 @@ export default function AutoHideHeader() {
             onClick={(e) => {
               if (menuItems[4].type === "anchor") {
                 e.preventDefault();
-                handleNavClick(menuItems[4].href, menuItems[4].type, menuItems[4].scrollOffset);
+                handleNavClick(menuItems[4].href, menuItems[4].type);
               }
             }}
             className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
@@ -134,7 +134,7 @@ export default function AutoHideHeader() {
             href={menuItems[5].href}
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick(menuItems[5].href, menuItems[5].type, menuItems[5].scrollOffset);
+              handleNavClick(menuItems[5].href, menuItems[5].type);
             }}
             className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
           >
@@ -190,7 +190,7 @@ export default function AutoHideHeader() {
               onClick={(e) => {
                 if (item.type === "anchor") {
                   e.preventDefault();
-                  handleNavClick(item.href, item.type, item.scrollOffset);
+                  handleNavClick(item.href, item.type);
                 } else {
                   setMobileMenuOpen(false);
                 }

@@ -9,6 +9,13 @@ const TAGS = [
   "Planejamento Sucessório",
   "M&A",
   "Eficiência",
+  "Pessoa física",
+  "Pessoa jurídica",
+  "Transparência",
+  "Segurança",
+  "Inovação",
+  "Estratégia",
+
 ];
 
 export default function RollingTags() {

@@ -92,7 +92,7 @@ const clientes: Cliente[] = [
   { id: 46, nome: "Trem Corcovado", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_trem_corcovado.png", categoria: "Serviços" },
   { id: 47, nome: "Veneza Serviços Terceirizados", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Veneza_servicos_terceirizados.png", categoria: "Serviços" },
   { id: 48, nome: "Construjet Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Construjet_Engenharia.png", categoria: "Serviços" },
-  { id: 49, nome: "Sig Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Sig_Engenharia.png", categoria: "Serviços" },
+  { id: 49, nome: "Sig Engenharia", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_SIG_engenharia.png", categoria: "Serviços" },
   { id: 50, nome: "Inace Iates", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Inace_iates2.png", categoria: "Serviços" },
   { id: 51, nome: "Águas Passa Quatro", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Aguas_Passa_Quatro.png", categoria: "Serviços" },
   { id: 52, nome: "Organização das Cooperativas Brasileiras", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Organização_das_Cooperativas_Brasileiras.jpg", categoria: "Serviços" },

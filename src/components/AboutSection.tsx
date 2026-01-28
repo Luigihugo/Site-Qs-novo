@@ -10,7 +10,7 @@ export default function AboutSection() {
 
   // Timeline data
   const timeline = [
-    { year: "2014", event: "Início na garagem de casa em Nova Iguaçu" },
+    { year: "2014", event: "Início na garagem de casa em Nova Iguaçu-RJ" },
     { year: "2018", event: "Escritório no centro do RJ" },
     { year: "2020", event: "Pandemia - todo mundo em casa" },
     { year: "2022", event: "Abertura de filial em Belém" },
@@ -164,7 +164,8 @@ export default function AboutSection() {
           </h3>
           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 md:p-12 text-center">
             <p className="text-white/80 text-lg mb-6 max-w-2xl mx-auto">
-              Trabalhamos em parceria com empresas que compartilham nossos valores de excelência e inovação.
+              Trabalhamos em parceria com empresas que compartilham nossos valores de excelência e inovação. 
+              Acesse o Portal <b>QSpartners</b> e conheça nosso ecossistema de parceiros. Clique abaixo!
             </p>
             <a
               href="https://www.qspartners.com.br/"
@@ -180,7 +181,7 @@ export default function AboutSection() {
         {/* Filiais - Mapa do Brasil */}
         <div className="mb-8">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-            Nossas Filiais
+            Atuação Nacional
           </h3>
           <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
             <div className="relative w-full max-w-4xl mx-auto">

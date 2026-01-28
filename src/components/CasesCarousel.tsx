@@ -12,35 +12,35 @@ type Case = {
 
 const cases: Case[] = [
   {
-    titulo: "Otimização Tributária em Empresa do Setor Comercial",
+    titulo: "Otimização Tributária",
     segmento: "Comércio",
-    desafio: "Empresa de grande porte enfrentava carga tributária elevada, impactando diretamente a competitividade e margem de lucro. Necessidade de identificar oportunidades de economia sem comprometer a segurança jurídica.",
-    solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Desenvolvemos planejamento tributário personalizado com foco em redução de carga e otimização de processos.",
-    resultado: "Redução significativa na carga tributária efetiva, com impacto positivo imediato no fluxo de caixa. Estrutura implementada garantiu segurança jurídica e conformidade fiscal.",
+    desafio: "Empresa de médio porte enfrentava alta carga tributária comprometendo margem e competitividade",
+    solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
+    resultado: "✔ Redução relevante da carga tributária  ✔ Impacto imediato no fluxo de caixa ✔ Operação segura e em conformidade",
     metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
   },
   {
     titulo: "Estruturação Patrimonial e Sucessória",
-    segmento: "Serviços",
-    desafio: "Grupo empresarial familiar necessitava proteger patrimônio significativo e estruturar sucessão de forma eficiente, evitando perdas tributárias e garantindo continuidade dos negócios.",
-    solucao: "Criamos estrutura societária e patrimonial personalizada, com mecanismos de governança e proteção. Planejamento sucessório detalhado que preserva riqueza e facilita transição geracional.",
-    resultado: "Patrimônio protegido e estruturado de forma eficiente. Sucessão planejada com redução de custos tributários e garantia de continuidade operacional para as próximas gerações.",
-    metricas: ["Proteção patrimonial", "Redução de custos sucessórios", "Governança implementada"],
+    segmento: "PF e PJ",
+    desafio: "Risco patrimonial e sucessão sem estrutura definida.",
+    solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
+    resultado: "✔ Patrimônio protegido  ✔ Sucessão planejada e eficiente ✔ Continuidade do negócio garantida",
+    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
   },
   {
-    titulo: "Gestão de Passivos e Negociação Fiscal",
+    titulo: "Gestão de Passivos Tributários",
     segmento: "Indústria",
-    desafio: "Empresa industrial acumulava passivos tributários significativos, com risco de execução fiscal e impacto negativo na operação. Necessidade de estratégia para reduzir exposição e negociar condições viáveis.",
-    solucao: "Realizamos análise detalhada dos passivos, identificando oportunidades de redução e defesas técnicas. Estruturamos estratégia de negociação com foco em redução de valores e condições de pagamento adequadas ao fluxo de caixa.",
-    resultado: "Redução expressiva no valor dos passivos através de defesas técnicas e negociação estratégica. Condições de pagamento alinhadas à capacidade financeira da empresa, eliminando riscos operacionais.",
-    metricas: ["Redução de passivos", "Negociação bem-sucedida", "Riscos mitigados"],
+    desafio: "Passivos tributários elevados e risco operacionais",
+    solucao: "Implementamos sistema de compliance fiscal digital com monitoramento em tempo real. Revisão periódica de obrigações, cruzamento de dados e alertas preventivos para evitar inconsistências.",
+    resultado: "✔ Redução expressiva dos passivos. ✔ Condições de pagamento viáveis. ✔ Eliminação de riscos fiscais críticos.",
+    metricas: ["Redução de risco de autuações", "Conformidade garantida", "Monitoramento contínuo"],
   },
   {
-    titulo: "Compliance e Prevenção de Autuações",
-    segmento: "Moda",
-    desafio: "Empresa do setor de moda enfrentava risco constante de autuações fiscais devido à complexidade das operações e múltiplas unidades. Necessidade de sistema preventivo e monitoramento contínuo.",
-    solucao: "Implementamos sistema de compliance fiscal digital com monitoramento em tempo real. Revisão periódica de obrigações, cruzamento de dados e alertas preventivos para evitar inconsistências.",
-    resultado: "Redução drástica no risco de autuações através de monitoramento preventivo. Conformidade fiscal garantida em todas as operações, proporcionando tranquilidade e foco no negócio.",
+    titulo: "Compliance fiscal digital",
+    segmento: "Serviços",
+    desafio: "Risco constante de autuações pela RFB.",
+    solucao: "Implementamos sistema de compliance fiscal digital com monitoramento das obrigações fiscais. Revisão dos últimos 5 anos, cruzamento de dados e alertas preventivos para evitar inconsistências.",
+    resultado: "✔ Redução fiscal drasticamente reduzido. ✔ Conformidade fiscal. ✔ Monitoramento preventivo ativo",
     metricas: ["Redução de risco de autuações", "Conformidade garantida", "Monitoramento contínuo"],
   },
 ];
@@ -134,7 +134,7 @@ export default function CasesCarousel() {
             href="#contato"
             className="btn-premium inline-block"
           >
-            Fale com nossos especialistas
+            Fale com um especialista da QS
           </a>
         </div>
       </RevealOnScroll>

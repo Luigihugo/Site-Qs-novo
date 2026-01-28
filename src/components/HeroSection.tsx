@@ -16,15 +16,15 @@ export default function HeroSection() {
 
           {/* Título */}
           <h1 className="animate-fade-in-up opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
-            Obtenha visão estratégica <br className="hidden lg:block" />
+          Transformamos complexidade tributária <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-              e alcance o potencial máximo
+            em vantagem estratégica
             </span>
           </h1>
 
           {/* Subtítulo */}
           <p className="animate-fade-in-up opacity-0 text-lg md:text-xl lg:text-2xl text-brand-blue-100/80 max-w-2xl leading-relaxed" style={{ animationDelay: '0.3s' }}>
-            Transformamos desafios complexos em oportunidades de crescimento com inteligência tributária e jurídica.
+          Metodologia e software próprios, testados e aprovados em 1.800 projetos.
           </p>
 
           {/* CTAs */}

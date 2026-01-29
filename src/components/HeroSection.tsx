@@ -18,14 +18,13 @@ export default function HeroSection() {
           <h1 className="animate-fade-in-up opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
           Transformamos complexidade tributária <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-            em vantagem estratégica
+            em vantagem competitiva
             </span>
           </h1>
 
           {/* Subtítulo */}
           <p className="animate-fade-in-up opacity-0 text-lg md:text-xl lg:text-2xl text-brand-blue-100/80 max-w-2xl leading-relaxed" style={{ animationDelay: '0.3s' }}>
-          Metodologia e software próprios, testados e aprovados em 1.800 projetos.
-          </p>
+          Eficiência é extrair valor das oportunidades enquanto os riscos são estrategicamente mitigados.          </p>
 
           {/* CTAs */}
           <div className="animate-fade-in-up opacity-0 flex flex-wrap justify-center gap-4 pt-4" style={{ animationDelay: '0.4s' }}>

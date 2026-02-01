@@ -16,19 +16,20 @@ export default function Home() {
   const scrollExecutedRef = useRef(false);
 
   useEffect(() => {
-    // Primeiro: garantir que a página está no topo
-    window.scrollTo(0, 0);
-    
-    // Verificar se há hash na URL (vindo de outra página)
     const hash = window.location.hash;
-    
+
+    // IMPORTANTE:
+    // - Não forçar scroll para o topo aqui. Em navegação com hash (ex: "/#contato"),
+    //   isso pode entrar em conflito com o scroll do navegador/Next durante hidratação
+    //   e causar o "puxão" (voltar pro topo alguns segundos depois).
+    // - Mantemos o comportamento normal quando NÃO há hash: não mexemos no scroll.
+    if (!hash) return;
+
+    // Se houver hash, fazer scroll suave para a seção correspondente
     if (hash && !scrollExecutedRef.current) {
       scrollExecutedRef.current = true;
       const targetHash = hash;
-      
-      // Limpar hash da URL imediatamente
-      window.history.replaceState(null, "", window.location.pathname);
-      
+
       // Aguardar a página carregar completamente antes de fazer scroll
       const scrollToSection = () => {
         // Aguardar um pouco mais para garantir que tudo carregou

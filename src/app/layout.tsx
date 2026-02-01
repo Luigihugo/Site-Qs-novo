@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import CursorFollower from "@/components/CursorFollower";
 import BackToTop from "@/components/BackToTop";
+import ScrollRestorationFix from "@/components/ScrollRestorationFix";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className="scroll-smooth">
       <body className={`${inter.variable} antialiased font-sans`}>
+        <ScrollRestorationFix />
         <CursorFollower />
         {children}
         <BackToTop />

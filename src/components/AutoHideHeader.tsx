@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import ScrollProgress from "@/components/ScrollProgress";
+import { useRouter } from "next/navigation";
 
 export default function AutoHideHeader() {
+  const router = useRouter();
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +50,18 @@ export default function AutoHideHeader() {
       setMobileMenuOpen(false);
       return;
     }
+    if (type === "link") {
+      // Navegação SPA (evita reload e possíveis "puxões" de scroll restoration do browser)
+      router.push(href);
+      setMobileMenuOpen(false);
+      return;
+    }
     if (type === "anchor") {
       if (window.location.pathname !== "/") {
-        window.location.href = `/${href}`;
+        // Vindo de outra rota: navegar para "/#secao" sem o scroll automático do Next
+        // (o scroll suave é tratado na Home).
+        router.push(`/${href}`, { scroll: false });
+        setMobileMenuOpen(false);
         return;
       }
       
@@ -91,7 +102,8 @@ export default function AutoHideHeader() {
                 window.history.replaceState(null, "", "/");
                 window.scrollTo({ top: 0, behavior: "smooth" });
               } else {
-                window.location.href = "/";
+                e.preventDefault();
+                router.push("/");
               }
             }}
             className="flex items-center flex-shrink-0"
@@ -110,10 +122,7 @@ export default function AutoHideHeader() {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => {
-                  if (item.type === "anchor") {
-                    e.preventDefault();
-                    handleNavClick(item.href, item.type);
-                  } else if (item.type === "external") {
+                  if (item.type === "anchor" || item.type === "external" || item.type === "link") {
                     e.preventDefault();
                     handleNavClick(item.href, item.type);
                   }
@@ -204,7 +213,7 @@ export default function AutoHideHeader() {
                     key={item.label}
                     href={item.href}
                     onClick={(e) => {
-                      if (item.type === "anchor" || item.type === "external") {
+                      if (item.type === "anchor" || item.type === "external" || item.type === "link") {
                         e.preventDefault();
                         handleNavClick(item.href, item.type);
                       } else {

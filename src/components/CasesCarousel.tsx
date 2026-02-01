@@ -17,7 +17,7 @@ const cases: Case[] = [
     desafio: "Empresa de médio porte enfrentava alta carga tributária comprometendo margem e competitividade",
     solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
     resultado: "✔ Redução relevante da carga tributária  ✔ Impacto imediato no fluxo de caixa ✔ Operação segura e em conformidade",
-    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
+    metricas: ["Redução de carga tributária", "Fluxo de caixa positivo em curto prazo", "Zero autuação"],
   },
   {
     titulo: "Estruturação Patrimonial e Sucessória",
@@ -25,7 +25,7 @@ const cases: Case[] = [
     desafio: "Risco patrimonial e sucessão sem estrutura definida.",
     solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
     resultado: "✔ Patrimônio protegido  ✔ Sucessão planejada e eficiente ✔ Continuidade do negócio garantida",
-    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
+    metricas: ["Redução de carga tributária", "Segurança patrimonial", "Zero autuações"],
   },
   {
     titulo: "Gestão de Passivos Tributários",

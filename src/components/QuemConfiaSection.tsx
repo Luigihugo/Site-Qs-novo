@@ -7,7 +7,7 @@ import Link from "next/link";
 const logosDestaque = [
   {
     nome: "Amaggi",
-    logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Amaggi.jpg",
+    logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_amaggi_2.png",
   },
   {
     nome: "Banco Opportunity",

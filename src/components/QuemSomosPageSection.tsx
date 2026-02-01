@@ -10,7 +10,7 @@ export default function QuemSomosPageSection() {
 
   const metrics = [
     { value: "11", label: "anos", detail: "de atuação" },
-    { value: "+ R$2 Bi", label: "em projetos", detail: "mapeados" },
+    { value: "+ R$2 Bi", label: "mapeados", detail: "em projetos" },
     { value: "+1800", label: "projetos", detail: "atendidos" },
     { value: "Zero", label: "autuação", detail: "em projetos fiscais" },
     { value: "+ R$1 Bi", label: "em riqueza", detail: "protegida" },

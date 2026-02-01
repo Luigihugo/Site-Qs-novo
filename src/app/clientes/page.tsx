@@ -34,7 +34,7 @@ type Cliente = {
 
 const clientes: Cliente[] = [
   // ========== TOP 17 (na ordem específica) ==========
-  { id: 1, nome: "Amaggi", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Amaggi.jpg", categoria: "Comércio", top10: true, ordemTop: 1 },
+  { id: 1, nome: "Amaggi", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_amaggi_2.png", categoria: "Comércio", top10: true, ordemTop: 1 },
   { id: 2, nome: "Banco Opportunity", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Banco Opportunity.png", categoria: "Comércio", top10: true, ordemTop: 2 },
   { id: 35, nome: "Falconi", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Falconi.png", categoria: "Serviços", top10: true, ordemTop: 3 },
   { id: 15, nome: "Vicunha", logo: "/logos-clientes/Logos Clientes (Atualizados 2025)/Empresa_Vicunha.png", categoria: "Indústria", top10: true, ordemTop: 4 },

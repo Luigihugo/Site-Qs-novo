@@ -8,7 +8,7 @@ type Case = {
   segmento: string;
   desafio: string;
   solucao: string;
-  resultado: string;
+  resultado: string[];
   metricas: string[];
 };
 
@@ -18,32 +18,32 @@ const cases: Case[] = [
     segmento: "Comércio",
     desafio: "Empresa de médio porte enfrentava alta carga tributária comprometendo margem e competitividade",
     solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
-    resultado: "✔ Redução relevante da carga tributária  ✔ Impacto imediato no fluxo de caixa ✔ Operação segura e em conformidade",
-    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
+    resultado: "Redução relevante da carga tributária Impacto imediato no fluxo de caixa Operação segura e em conformidade",
+    metricas: ["Redução de carga tributária", "Fluxo de caixa positivo em curto prazo", "Zero autuação"],
   },
   {
     titulo: "Estruturação Patrimonial e Sucessória",
     segmento: "PF e PJ",
     desafio: "Risco patrimonial e sucessão sem estrutura definida.",
     solucao: "Implementamos análise completa do histórico fiscal, identificando créditos tributários não aproveitados e estruturas mais eficientes. Executamos nossa metodologia personalizada com foco em redução de carga e otimização de processos.",
-    resultado: "✔ Patrimônio protegido  ✔ Sucessão planejada e eficiente ✔ Continuidade do negócio garantida",
-    metricas: ["Redução de carga tributária", "ROI positivo em curto prazo", "Zero autuações"],
+    resultado: "Patrimônio protegido Sucessão planejada e eficiente Continuidade do negócio garantida",
+    metricas: ["Redução de carga tributária", "Segurança patrimonial", "Sem necessidade de inventário"],
   },
   {
     titulo: "Gestão de Passivos Tributários",
     segmento: "Indústria",
     desafio: "Passivos tributários elevados e risco operacionais",
     solucao: "Implementamos sistema de compliance fiscal digital com monitoramento em tempo real. Revisão periódica de obrigações, cruzamento de dados e alertas preventivos para evitar inconsistências.",
-    resultado: "✔ Redução expressiva dos passivos. ✔ Condições de pagamento viáveis. ✔ Eliminação de riscos fiscais críticos.",
-    metricas: ["Redução de risco de autuações", "Conformidade garantida", "Monitoramento contínuo"],
+    resultado: "Redução expressiva dos passivos. Condições de pagamento viáveis. Eliminação de riscos fiscais críticos.",
+    metricas: ["Melhoria na CAPAG", "Transação Individual com PGFN", "Fluxo de caixa aliviado"],
   },
   {
     titulo: "Compliance fiscal digital",
     segmento: "Serviços",
     desafio: "Risco constante de autuações pela RFB.",
     solucao: "Implementamos sistema de compliance fiscal digital com monitoramento das obrigações fiscais. Revisão dos últimos 5 anos, cruzamento de dados e alertas preventivos para evitar inconsistências.",
-    resultado: "✔ Redução fiscal drasticamente reduzido. ✔ Conformidade fiscal. ✔ Monitoramento preventivo ativo",
-    metricas: ["Redução de risco de autuações", "Conformidade garantida", "Monitoramento contínuo"],
+    resultado: "Redução fiscal drasticamente reduzido. Conformidade fiscal. Monitoramento preventivo ativo",
+    metricas: ["Redução em risco de autuações", "Conformidade fiscal", "Redução de autuações pela RFB"],
   },
 ];
 
@@ -56,8 +56,8 @@ export default function QuemSomosSection() {
 
   const metrics = [
     { value: "11", label: "anos", detail: "de atuação" },
-    { value: "+ R$2 Bi", label: "em projetos", detail: "mapeados" },
     { value: "+1800", label: "projetos", detail: "atendidos" },
+    { value: "+ R$2 Bi", label: "mapeados", detail: "em projetos" },
     { value: "Zero", label: "autuação", detail: "em projetos fiscais" },
     { value: "+ R$1 Bi", label: "em riqueza", detail: "protegida" },
     { value: "80%", label: "de redução", detail: "no risco de fiscalização" },
@@ -243,17 +243,17 @@ export default function QuemSomosSection() {
                 
                 {/* Caixa de informações - centralizada e alinhada com o mapa */}
                 <div className="space-y-6 flex flex-col justify-center">
-                  <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
-                    <p className="text-white/90 text-lg leading-relaxed text-center lg:text-left">
-                      Desde 2014, já realizamos mais de{" "}
-                      <span className="inline-block px-3 py-1 rounded bg-brand-blue-500/20 text-brand-blue-300 font-bold">
-                        1.800 projetos
-                      </span>{" "}
-                      para empresários de todo o Brasil, gerando uma economia de{" "}
-                      <span className="inline-block px-3 py-1 rounded bg-brand-blue-500/20 text-brand-blue-300 font-bold">
-                        + R$ 2 bilhões
-                      </span>
-                      !
+                <div className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+                <p className="text-white/90 text-lg leading-relaxed text-center lg:text-left">
+                Desde 2014, já realizamos mais de{" "}
+                <span className="font-bold text-brand-blue-300 whitespace-nowrap">
+                1.800 projetos
+                </span>{" "}
+                para empresários de todo o Brasil, gerando uma economia superior a{" "}
+                <span className="font-bold text-brand-blue-300 whitespace-nowrap">
+                R$ 2 bilhões
+                </span>
+                !
                     </p>
                   </div>
                   

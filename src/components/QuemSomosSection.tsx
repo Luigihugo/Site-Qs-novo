@@ -8,7 +8,7 @@ type Case = {
   segmento: string;
   desafio: string;
   solucao: string;
-  resultado: string[];
+  resultado: string;
   metricas: string[];
 };
 

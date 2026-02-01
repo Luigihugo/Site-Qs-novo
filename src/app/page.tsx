@@ -1,16 +1,15 @@
 "use client";
 import { useEffect, useRef } from "react";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
+import MetodoSoftwareAutoridadeSection from "@/components/MetodoSoftwareAutoridadeSection";
 import QuemSomosSection from "@/components/QuemSomosSection";
-import ServicesSection from "@/components/ServicesSection";
-
+import CEOSection from "@/components/CEOSection";
+import QuemConfiaSection from "@/components/QuemConfiaSection";
+import DepoimentosSection from "@/components/DepoimentosSection";
 import ContactCTASection from "@/components/ContactCTASection";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import AutoHideHeader from "@/components/AutoHideHeader";
-import CasesCarousel from "@/components/CasesCarousel";
-import CultureSection from "@/components/CultureSection";
 import FloatingContactBar from "@/components/FloatingContactBar";
 
 export default function Home() {
@@ -60,13 +59,25 @@ export default function Home() {
       <AutoHideHeader />
 
       <InteractiveBackground>
+        {/* Bloco 1 - HeroSection */}
         <HeroSection />
 
-        <AboutSection />
+        {/* Bloco 2 - MÉTODO · SOFTWARE · AUTORIDADE */}
+        <MetodoSoftwareAutoridadeSection />
+
+        {/* Bloco 4 - Prova de valor = "Quem somos" números + cases + mapa */}
         <QuemSomosSection />
-        <ServicesSection />
-        <CasesCarousel />
-        <CultureSection />
+
+        {/* Bloco 5 - CEO e Founder */}
+        <CEOSection />
+
+        {/* Bloco 6 - Quem confia na QS */}
+        <QuemConfiaSection />
+
+        {/* Bloco 7 - Depoimentos */}
+        <DepoimentosSection />
+
+        {/* Bloco 8 - CTA final */}
         <ContactCTASection />
         <Footer />
       </InteractiveBackground>

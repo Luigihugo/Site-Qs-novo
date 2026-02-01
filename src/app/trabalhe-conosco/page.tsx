@@ -67,7 +67,7 @@ export default function TrabalheConoscoPage() {
                   </span>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6">
                     Faça parte do{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-500 to-brand-teal-500">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-300 via-brand-gold-200 to-white">
                       time QS
                     </span>
                   </h1>

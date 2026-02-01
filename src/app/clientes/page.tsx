@@ -132,7 +132,7 @@ export default function ClientesPage() {
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
                   Conheça alguns dos nossos{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-500 to-brand-teal-500">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-300 via-brand-gold-200 to-white">
                     +1800 projetos
                   </span>
                 </h1>

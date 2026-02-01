@@ -18,7 +18,7 @@ export default function HeroSection() {
           <h1 className="animate-fade-in-up opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
           Transformamos complexidade tributária <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-            em vantagem competitiva
+            em vantagem competitiva em 30 dias
             </span>
           </h1>
 

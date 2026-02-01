@@ -35,17 +35,19 @@ export default function AutoHideHeader() {
   }, [mobileMenuOpen]);
 
   const menuItems = [
-    { label: "Sobre", href: "#sobre", type: "anchor" },
-    { label: "Quem somos", href: "#quem-somos", type: "anchor" },
-    { label: "Nossa expertise", href: "#servicos", type: "anchor" },
+    { label: "Sobre nós", href: "/sobre", type: "link" },
+    { label: "Nossa expertise", href: "/expertise", type: "link" },
     { label: "Quem confia em nós", href: "/clientes", type: "link" },
-    { label: "Cases", href: "#cases", type: "anchor" },
-    { label: "Parceiros", href: "#parceiros", type: "anchor" },
     { label: "Contato", href: "#contato", type: "anchor" },
-    { label: "Faça parte do time QS", href: "/trabalhe-conosco", type: "link" },
+    { label: "Seja Parceiro QS", href: "https://www.qspartners.com.br/", type: "external" },
   ];
 
   const handleNavClick = (href: string, type: string) => {
+    if (type === "external") {
+      window.open(href, "_blank", "noopener,noreferrer");
+      setMobileMenuOpen(false);
+      return;
+    }
     if (type === "anchor") {
       if (window.location.pathname !== "/") {
         window.location.href = `/${href}`;
@@ -103,12 +105,15 @@ export default function AutoHideHeader() {
 
           {/* Desktop Menu - Visível apenas em telas grandes */}
           <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2 flex-wrap justify-end flex-1 min-w-0">
-            {menuItems.slice(0, 4).map((item) => (
+            {menuItems.slice(0, 3).map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => {
                   if (item.type === "anchor") {
+                    e.preventDefault();
+                    handleNavClick(item.href, item.type);
+                  } else if (item.type === "external") {
                     e.preventDefault();
                     handleNavClick(item.href, item.type);
                   }
@@ -119,42 +124,24 @@ export default function AutoHideHeader() {
               </a>
             ))}
             <a
+              href={menuItems[3].href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(menuItems[3].href, menuItems[3].type);
+              }}
+              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            >
+              {menuItems[3].label}
+            </a>
+            <a
               href={menuItems[4].href}
               onClick={(e) => {
-                if (menuItems[4].type === "anchor") {
-                  e.preventDefault();
-                  handleNavClick(menuItems[4].href, menuItems[4].type);
-                }
-              }}
-              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            >
-              {menuItems[4].label}
-            </a>
-            <a
-              href={menuItems[5].href}
-              onClick={(e) => {
                 e.preventDefault();
-                handleNavClick(menuItems[5].href, menuItems[5].type);
-              }}
-              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            >
-              {menuItems[5].label}
-            </a>
-            <a
-              href={menuItems[6].href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(menuItems[6].href, menuItems[6].type);
+                handleNavClick(menuItems[4].href, menuItems[4].type);
               }}
               className="rounded-full px-3 xl:px-4 py-1.5 bg-brand-gold-500 text-brand-navy-900 font-semibold text-xs hover:bg-brand-gold-400 hover:scale-105 shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
             >
-              {menuItems[6].label}
-            </a>
-            <a
-              href={menuItems[7].href}
-              className="rounded-full px-3 xl:px-4 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-xs font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            >
-              {menuItems[7].label}
+              {menuItems[4].label}
             </a>
           </nav>
 
@@ -217,7 +204,7 @@ export default function AutoHideHeader() {
                     key={item.label}
                     href={item.href}
                     onClick={(e) => {
-                      if (item.type === "anchor") {
+                      if (item.type === "anchor" || item.type === "external") {
                         e.preventDefault();
                         handleNavClick(item.href, item.type);
                       } else {
@@ -225,14 +212,14 @@ export default function AutoHideHeader() {
                       }
                     }}
                     className={`group relative rounded-full px-5 py-3.5 text-sm font-medium transition-all duration-300 hover:scale-105 whitespace-nowrap flex items-center justify-center animate-fade-in-up opacity-0 ${
-                      index === 6
+                      index === 4
                         ? "bg-brand-gold-500 text-brand-navy-900 hover:bg-brand-gold-400 shadow-lg hover:shadow-xl hover:shadow-brand-gold-500/30 font-semibold"
                         : "bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white"
                     }`}
                     style={{ animationDelay: `${index * 50 + 100}ms` }}
                   >
                     <span className="relative z-10">{item.label}</span>
-                    {index === 6 && (
+                    {index === 4 && (
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     )}
                   </a>

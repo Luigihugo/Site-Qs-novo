@@ -56,7 +56,7 @@ export default function DepoimentosSection() {
 
                 {/* Texto do depoimento */}
                 <div className="relative z-10 mb-6">
-                  <p className="text-lg md:text-xl text-white/90 leading-relaxed italic">
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed italic text-justify">
                     {depoimento.texto}
                   </p>
                 </div>

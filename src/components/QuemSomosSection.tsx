@@ -81,27 +81,27 @@ export default function QuemSomosSection() {
         </RevealOnScroll>
 
         {/* Metrics Grid - Números nas caixas com design da foto */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16 md:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 md:mb-20">
           {metrics.map((metric, index) => {
             return (
               <RevealOnScroll key={index} delay={index * 50}>
                 <div
-                  className={`group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`group relative rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 md:p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                     }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-brand-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-brand-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative">
                     {/* Número em branco (todos os números) */}
-                    <div className="text-3xl md:text-4xl font-bold mb-1 text-white">
+                    <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 text-white leading-tight">
                       {metric.value}
                     </div>
                     {/* Subheadline em amarelo/dourado */}
-                    <div className="text-lg md:text-xl text-brand-gold-500 font-semibold">
+                    <div className="text-base sm:text-lg md:text-xl text-brand-gold-500 font-semibold leading-tight">
                       {metric.label}
                     </div>
                     {/* Texto descritivo em branco simples */}
-                    <div className="text-sm text-white mt-1">{metric.detail}</div>
+                    <div className="text-xs sm:text-sm text-white mt-1 leading-tight">{metric.detail}</div>
                   </div>
                 </div>
               </RevealOnScroll>

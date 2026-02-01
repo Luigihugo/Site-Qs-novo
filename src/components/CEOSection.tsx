@@ -14,8 +14,8 @@ export default function CEOSection() {
             {/* Header */}
             <div className="text-center mb-12 md:mb-16">
               <span className="inline-block py-1 px-3 rounded-full bg-brand-blue-500/10 border border-brand-blue-500/20 text-xs md:text-sm uppercase tracking-[0.2em] text-brand-blue-500 font-semibold backdrop-blur-sm mb-4">
-                Quem está por trás disso?
-              </span>
+              Conheça quem lidera a QS
+                            </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6">
                 CEO e Founder
               </h2>
@@ -40,7 +40,7 @@ export default function CEOSection() {
               <div className="flex-1 space-y-6 flex flex-col justify-between">
                 {/* Texto principal */}
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex-1 flex items-center">
-                  <p className="text-base md:text-lg text-white/90 leading-relaxed italic">
+                  <p className="text-base md:text-lg text-white/90 leading-relaxed italic text-justify">
                     "A QS nasceu da inquietação com a forma superficial como empresas lidam com tributos e decisões estratégicas. Nosso papel é entrar onde dói, organizar o caos e transformar complexidade em clareza para quem decide."
                   </p>
                 </div>
@@ -48,14 +48,13 @@ export default function CEOSection() {
                 {/* Currículo curto */}
                 <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 flex-1 flex flex-col justify-center">
                   <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
-                    Conheça quem lidera a QS
+                    Erick Rocha Neves
                   </h3>
                   <div className="space-y-3 text-white/80">
                     {/* Adicione aqui o currículo curto do CEO */}
-                    <p className="leading-relaxed">
+                    <p className="leading-relaxed text-justify">
                       {/* Exemplo de currículo - substitua pelos dados reais */}
-                      Especialista em consultoria tributária e estratégica com mais de 15 anos de experiência. 
-                      Fundador da QS Consultoria, transformou a empresa em referência nacional em eficiência empresarial.
+                      Especialista em consultoria tributária e estratégica, com MBA em Gestão Tributária pela FGV e formação executiva em Gestão de Inteligência Artificial pelo MIT (Boston). Possui mais de 15 anos de experiência e é fundador da QS Consultoria e do Rocha Neves Advogados, organizações reconhecidas nacionalmente por sua atuação em eficiência empresarial e tomada de decisão estratégica.
                     </p>
                     {/* Adicione mais informações conforme necessário */}
                   </div>

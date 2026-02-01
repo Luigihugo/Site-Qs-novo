@@ -28,11 +28,11 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div className="animate-fade-in-up opacity-0 flex flex-wrap justify-center gap-4 pt-4" style={{ animationDelay: '0.4s' }}>
-            <a href="#contato" className="group relative btn-premium text-base md:text-lg px-8 py-4 overflow-hidden">
+            <a href="#contato" className="group relative btn-premium text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 overflow-hidden whitespace-nowrap">
               <span className="relative z-10">Agendar Conversa</span>
               <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent z-0" />
             </a>
-            <a href="#servicos" className="btn-outline-premium text-base md:text-lg px-8 py-4 hover:bg-white/5">
+            <a href="/expertise" className="btn-outline-premium text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 hover:bg-white/5 whitespace-nowrap">
               Nossa expertise
             </a>
           </div>

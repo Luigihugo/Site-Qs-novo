@@ -25,7 +25,7 @@ export default function ContactCTASection() {
                 rel="noopener noreferrer"
                 className="btn-premium text-base md:text-lg px-8 py-4 inline-flex items-center gap-3 group"
               >
-                <span>👉 Agendar conversa estratégica</span>
+                <span>Agendar conversa estratégica</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 transition-transform group-hover:translate-x-1"

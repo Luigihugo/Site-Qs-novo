@@ -96,6 +96,14 @@ export default function BrasilMap({ className = "" }: BrasilMapProps) {
         stroke-width: 2px !important;
         opacity: 0.85 !important;
       }
+
+      /* São Paulo - Em expansão (2026) - mesma cor do quadrado "Em expansão" da legenda (gray-300 + opacity 50%) */
+      #BRSP {
+        fill: #d1d5db !important;
+        stroke: #ffffff !important;
+        stroke-width: 2px !important;
+        opacity: 0.5 !important;
+      }
     `;
     
     // Remover estilo anterior se existir

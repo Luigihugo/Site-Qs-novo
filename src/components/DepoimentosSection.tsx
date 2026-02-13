@@ -37,7 +37,7 @@ export default function DepoimentosSection() {
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
               O que nossos{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-blue-200 to-brand-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/85">
                 clientes dizem
               </span>
             </h2>
@@ -61,17 +61,22 @@ export default function DepoimentosSection() {
                   </p>
                 </div>
 
-                {/* Informações do autor */}
-                <div className="relative z-10 pt-6 border-t border-white/10">
-                  <p className="text-white font-semibold text-lg mb-1">
-                    {depoimento.autor}
-                  </p>
-                  <p className="text-brand-blue-500 text-sm mb-1">
-                    {depoimento.cargo}
-                  </p>
-                  <p className="text-white/60 text-sm">
-                    {depoimento.empresa}
-                  </p>
+                {/* Informações do autor com avatar */}
+                <div className="relative z-10 pt-6 border-t border-white/10 flex items-center gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 border-2 border-white/20 flex-shrink-0 flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    {depoimento.autor.split(/\s+/).map((n) => n[0]).join("").slice(0, 2).toUpperCase()}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-lg mb-0.5">
+                      {depoimento.autor}
+                    </p>
+                    <p className="text-brand-blue-500 text-sm mb-0.5">
+                      {depoimento.cargo}
+                    </p>
+                    <p className="text-white/60 text-sm">
+                      {depoimento.empresa}
+                    </p>
+                  </div>
                 </div>
               </div>
             </RevealOnScroll>

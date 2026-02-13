@@ -34,7 +34,7 @@ export default function QuemConfiaSection() {
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
               Empresas que{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-blue-200 to-brand-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/85">
                 confiam em nós
               </span>
             </h2>

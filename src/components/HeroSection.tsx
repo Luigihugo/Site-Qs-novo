@@ -15,10 +15,10 @@ export default function HeroSection() {
           </div>
 
           {/* Título */}
-          <h1 className="animate-fade-in-up opacity-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
-          Transformamos complexidade tributária <br className="hidden lg:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
-            em vantagem competitiva em 30 dias
+          <h1 className="animate-fade-in-up opacity-0 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] tracking-tight text-white max-w-5xl" style={{ animationDelay: '0.2s' }}>
+          A única consultoria com metodologia e tecnologia que gera <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">
+             vantagem competitiva em 30 dias
             </span>
           </h1>
 

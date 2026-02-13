@@ -38,13 +38,13 @@ export default function RevealOnScroll({
     if (!visible) {
       switch (direction) {
         case "left":
-          return "opacity-0 translate-x-[-30px]";
+          return "opacity-[0.6] translate-x-[-12px]";
         case "right":
-          return "opacity-0 translate-x-[30px]";
+          return "opacity-[0.6] translate-x-[12px]";
         case "scale":
-          return "opacity-0 scale-95";
+          return "opacity-[0.7] scale-[0.98]";
         default:
-          return "opacity-0 translate-y-8";
+          return "opacity-[0.6] translate-y-2";
       }
     }
     return "opacity-100 translate-y-0 translate-x-0 scale-100";
@@ -53,7 +53,7 @@ export default function RevealOnScroll({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out will-change-transform ${getTransformClass()}`}
+      className={`transition-all duration-500 ease-out will-change-transform ${getTransformClass()}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

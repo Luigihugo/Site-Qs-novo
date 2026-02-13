@@ -43,8 +43,8 @@ body {
 
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0.5;
+    transform: translateY(12px);
   }
 
   to {
@@ -232,8 +232,8 @@ h1 span {
 }
 
 .btn-premium:hover::after {
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
 }
 
 .btn-premium:active {

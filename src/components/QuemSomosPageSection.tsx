@@ -55,7 +55,7 @@ export default function QuemSomosPageSection() {
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
             Por que escolher a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-blue-200 to-brand-teal-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/90">
               QS
             </span>
           </h2>
@@ -71,7 +71,7 @@ export default function QuemSomosPageSection() {
           {metrics.map((metric, index) => (
             <div
               key={index}
-              className={`group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              className={`group relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-[0.6] translate-y-3"
                 }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
@@ -94,7 +94,7 @@ export default function QuemSomosPageSection() {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className={`group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-[1.02] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              className={`group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-[1.02] ${isVisible ? "opacity-100 translate-y-0" : "opacity-[0.6] translate-y-3"
                 }`}
               style={{ transitionDelay: `${800 + index * 100}ms` }}
             >

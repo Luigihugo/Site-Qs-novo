@@ -86,7 +86,7 @@ export default function QuemSomosSection() {
             return (
               <RevealOnScroll key={index} delay={index * 50}>
                 <div
-                  className={`group relative rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 md:p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  className={`group relative rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-4 sm:p-5 md:p-6 transition-all duration-500 hover:border-brand-blue-500/30 hover:bg-white/10 hover:scale-105 ${isVisible ? "opacity-100 translate-y-0" : "opacity-[0.6] translate-y-3"
                     }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
@@ -114,22 +114,38 @@ export default function QuemSomosSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-12 sm:mb-16 md:mb-20">
             {[
               {
-                icon: "⚡",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                ),
                 title: "Eficiência comprovada",
                 description: "Projetos complexos entregues com excelência e agilidade",
               },
               {
-                icon: "🛡️",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                ),
                 title: "Governança sólida",
                 description: "Redução de risco e aumento de previsibilidade",
               },
               {
-                icon: "👥",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
                 title: "Time sênior",
                 description: "Especialistas com método e tecnologia",
               },
               {
-                icon: "🎯",
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                ),
                 title: "Foco em resultados",
                 description: "Entrega mensurável e velocidade",
               },
@@ -139,7 +155,7 @@ export default function QuemSomosSection() {
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-brand-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 md:gap-5 flex-1">
                     {/* Ícone - centralizado no mobile, alinhado à esquerda no desktop */}
-                    <div className="text-4xl sm:text-5xl md:text-4xl lg:text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300 w-full sm:w-auto flex justify-center sm:justify-start">
+                    <div className="text-brand-blue-400 group-hover:text-brand-blue-300 flex-shrink-0 group-hover:scale-110 transition-all duration-300 w-full sm:w-auto flex justify-center sm:justify-start">
                       {benefit.icon}
                     </div>
                     {/* Conteúdo de texto */}
@@ -161,67 +177,67 @@ export default function QuemSomosSection() {
         {/* Cases de Sucesso - usando estrutura completa do CasesCarousel */}
         <RevealOnScroll delay={200}>
           <div className="mb-16 md:mb-20">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8 text-center">
               Cases de Sucesso
             </h3>
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-10 md:space-y-14">
               {cases.map((caseItem, index) => (
                 <RevealOnScroll key={index} delay={300 + index * 100}>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 md:p-12 relative overflow-hidden group hover:bg-white/[0.04] hover:border-brand-gold-500/30 transition-all duration-500">
-                    <div className="absolute top-0 right-0 p-8 opacity-5 text-9xl font-serif text-brand-gold-500 leading-none select-none">
+                  <article className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] shadow-xl shadow-black/20 group hover:border-brand-gold-500/25 hover:shadow-brand-gold-500/5 transition-all duration-500">
+                    {/* Número de fundo - afastado do conteúdo */}
+                    <div className="absolute top-4 right-4 md:top-6 md:right-6 text-7xl sm:text-8xl md:text-9xl font-serif text-brand-gold-500/[0.07] leading-none select-none pointer-events-none">
                       {index + 1}
                     </div>
 
-                    <div className="relative z-10">
-                      <div className="flex flex-wrap items-center gap-4 mb-4">
-                        <span className="inline-block py-1 px-3 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 text-xs font-semibold uppercase">
+                    {/* Faixa de destaque lateral */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-gold-500/40 via-brand-gold-500/20 to-transparent rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                    <div className="relative z-10 pt-10 md:pt-14 pb-6 md:pb-8 pl-6 pr-12 md:pl-10 md:pr-20 lg:pl-12 lg:pr-24">
+                      {/* Cabeçalho */}
+                      <header className="mb-6 md:mb-8">
+                        <span className="inline-block py-1.5 px-4 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/25 text-brand-gold-500 text-xs font-semibold uppercase tracking-wider mb-3">
                           {caseItem.segmento}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-brand-gold-500 transition-colors">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white group-hover:text-brand-gold-400/90 transition-colors max-w-2xl">
                           {caseItem.titulo}
                         </h3>
-                      </div>
+                      </header>
 
-                      <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-8">
-                        <div>
-                          <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
+                      {/* Desafio e Resultado - só texto nos balões */}
+                      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                        <div className="rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-5 md:p-6 shadow-inner">
+                          <h4 className="text-xs font-semibold text-brand-gold-500 uppercase tracking-widest mb-3">
                             Desafio
                           </h4>
-                          <p className="text-white/70 leading-relaxed text-sm md:text-base">
+                          <p className="text-white/85 leading-relaxed text-sm md:text-base">
                             {caseItem.desafio}
                           </p>
                         </div>
-
-                        <div>
-                          <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
-                            Solução
-                          </h4>
-                          <p className="text-white/70 leading-relaxed text-sm md:text-base">
-                            {caseItem.solucao}
-                          </p>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-semibold text-brand-gold-500 uppercase tracking-wider mb-3">
+                        <div className="rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-sm p-5 md:p-6 shadow-inner">
+                          <h4 className="text-xs font-semibold text-brand-gold-500 uppercase tracking-widest mb-3">
                             Resultado
                           </h4>
-                          <p className="text-white/70 leading-relaxed text-sm md:text-base mb-4">
+                          <p className="text-white/85 leading-relaxed text-sm md:text-base">
                             {caseItem.resultado}
                           </p>
-                          <div className="space-y-2">
-                            {caseItem.metricas.map((metrica, idx) => (
-                              <div
-                                key={idx}
-                                className="inline-block mr-2 mb-2 px-3 py-1 rounded-full bg-brand-gold-500/10 border border-brand-gold-500/20 text-brand-gold-500 text-xs font-medium"
-                              >
-                                {metrica}
-                              </div>
-                            ))}
-                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tags fora do balão - faixa dedicada abaixo */}
+                      <div className="mt-6 pt-5 border-t border-white/10">
+                        <div className="flex flex-wrap items-center gap-2">
+                          {caseItem.metricas.map((metrica, idx) => (
+                            <span
+                              key={idx}
+                              className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white/80 text-xs font-medium hover:border-brand-gold-500/30 hover:text-brand-gold-400/90 transition-colors"
+                            >
+                              {metrica}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </RevealOnScroll>
               ))}
             </div>
@@ -231,7 +247,7 @@ export default function QuemSomosSection() {
         {/* Mapa do Brasil - Atuação Nacional */}
         <RevealOnScroll delay={400}>
           <div className="mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8 text-center">
               Atuação Nacional
             </h3>
             <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8">
@@ -260,7 +276,7 @@ export default function QuemSomosSection() {
                   {/* Legenda */}
                   <div className="space-y-3 flex flex-col items-center lg:items-start">
                     <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded bg-[#1e7e34] border-2 border-white" />
+                      <div className="w-6 h-6 rounded bg-[#2d8b6e] border-2 border-white" />
                       <span className="text-white/80 text-sm">Estados com clientes</span>
                     </div>
                     <div className="flex items-center gap-3">

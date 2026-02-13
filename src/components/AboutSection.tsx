@@ -46,7 +46,7 @@ export default function AboutSection() {
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
             Por que escolher a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-300 via-brand-gold-200 to-white">
+            <span className="text-brand-gold-300">
               QS
             </span>
           </h2>
@@ -83,7 +83,7 @@ export default function AboutSection() {
                   </div>
                   
                   {/* Content card */}
-                  <div className={`flex-1 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-gold-500/30 hover:bg-white/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  <div className={`flex-1 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-brand-gold-500/30 hover:bg-white/10 ${isVisible ? "opacity-100 translate-y-0" : "opacity-[0.6] translate-y-3"
                     } ${index % 2 === 0 ? "text-left" : "text-right"
                     }`}
                     style={{ transitionDelay: `${600 + index * 100}ms` }}
